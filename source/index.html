@@ -9,8 +9,7 @@
       <a class="main-header__logo main-header__logo--open">Лого
       </a>
       <nav class="main-nav">
-        <button class="main-nav__toggle">
-          <span class="visually-hidden">Открыть меню</span>
+        <button class="main-nav__toggle" aria-label="Открыть меню">
         </button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
@@ -242,8 +241,9 @@
         <p class="interest-container__text">Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы?
           Тогда скорее <a class="interest-container__login" href=""> авторизуйтесь</a>.
         </p>
-        <form>
+        <form class="interest-container__form ">
           <input type="email" name="email">
+          <button>Отправить</button>
         </form>
         <p class="interest-container__text">Остались вопросы? Мы с радостью на них ответим!</p>
         <div class="interest-container__contacts our-contacts">
@@ -254,6 +254,7 @@
         </div>
       </section>
       <section class="map-container">
+        <h2 class="visually-hidden">Наше местоположение</h2>
         <address class="map-container_address"> ул. Большая Конюшенная, 19/8</address>
         <button class="map-container__button">Проложить маршрут</button>
         <div class="map"></div>

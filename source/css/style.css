@@ -463,6 +463,7 @@
 }
 /*блок 2*/
 .travel-container {
+  padding-top: 60px;
   position: relative;
   background: url(../img/globe-back-mobile.png) no-repeat;
   background-color: #161C35;
@@ -476,6 +477,7 @@
 }
 @media screen and (min-width: 768px) {
   .travel-container {
+    padding-top: 0;
     background-size: contain;
   }
 }

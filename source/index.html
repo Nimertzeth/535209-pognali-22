@@ -30,10 +30,10 @@
                 <a href="">О сервисе</a>
               </li>
               <li class="site-list__item">
-                <a href="">Направления</a>
+                <a href="/form.html">Направления</a>
               </li>
               <li class="site-list__item">
-                <a href="">Попутчики</a>
+                <a href="/catalog.html">Попутчики</a>
               </li>
             </ul>
           </div>
@@ -43,7 +43,7 @@
             <a class="user-list-desktop__email"><img src="img/button_mail.svg">
             </a>
             <a class="user-list-desktop__login" href="login.html">
-              Авторизация
+              <p>Авторизация</p>
             </a>
           </div>
           <div class="main-nav__list user-list-mobile">
@@ -106,7 +106,6 @@
           </div>
         </div>
       </section>
-    </main>
       <!--<div class="second-header-wrapper--none">
         <header class="second-header" style="display: none;">
           <a class="second-header__img" href=""><img class="main-header__logo--1440" src="img/logo-1440.png" width="200" height="52"></a>
@@ -134,8 +133,8 @@
             </div>
         </header>
     </div>-->
-      <section class="about-service-container">
-        <div class="about-service-container__wrapper">
+      <section class="about-service">
+        <div class="about-service__wrapper">
           <h2  class="about-service__title">О сервисе</h2>
           <div class="about-service__text-container">
             <p class="about-service__text">Любое путешествие веселее с попутчиками,
@@ -144,7 +143,7 @@
             </p>
             <p class="about-service__appeal">А если найдете кого-то близкого по духу — скорее зовите в совместный трип!
             </p>
-            <button class="about-service_button">Подробнее</button>
+            <button class="button-standart about-service_button"><p>Подробнее</p></button>
           </div>
           <div class="about-service__img-container">
             <img class="about-service__img" src="">
@@ -196,10 +195,10 @@
               </div>
             </div>
           </div>
-          <button class="button-standart destinations-list__button">Показать все</button>
+          <button class="button-standart"><p>Показать все</p></button>
         </div>
       </section >
-      <section class="companion-container">
+      <section class="companion">
         <div class="companion__wrapper">
           <div class="companion__text-block">
             <h2 class="companion__title">Попутчики</h2>
@@ -257,7 +256,7 @@
                 </div>
             </div>
           </div>
-          <button class="button-standart companion-container__button">Показать всеx</button>
+          <button class="button-standart companion__button"><p>Показать всеx</p></button>
         </div>
       </section>
       <section class="profile-wrapper">
@@ -305,30 +304,33 @@
           </div>
         </div>
       </section>
-      <section class="interest-wrapper">
-        <div class="interest-container">
-          <h2 class="interest-container__title">Заинтересовались?
+      <section class="interest">
+        <div class="interest__wrapper">
+          <h2 class="interest__title">Заинтересовались?
           </h2>
-          <p class="interest-container__text">Зарегистрируйтесь,<br> это быстро и бесплатно!<br class="br_768"> Уже зарегистрированы?
-            Тогда<br> скорее <a class="interest-container__login" href=""> авторизуйтесь</a>.
+          <p class="interest__text">Зарегистрируйтесь,<br> это быстро и бесплатно!<br class="interest__text__br--registration"> Уже зарегистрированы?
+            Тогда<br> скорее <a class="interest__login" href=""> авторизуйтесь</a>.
           </p>
-          <form class="interest-container__form">
-            <input class="interest-container__form-input" type="email" placeholder="E-mail" name="email">
-            <button aria-label="Отправить" class="interest-container__form-button"></button>
-            <button aria-label="Отправить" class="interest-container__form-button--1440">Регистрация</button>
+          <form class="interest__form">
+            <input class="interest__form-input" type="email" placeholder="E-mail" name="email">
+            <button aria-label="Отправить" class="interest__form-button"><p>Регистрация</p></button>
           </form>
-          <p class="interest-container__text">Остались вопросы?<br> Мы с радостью на них ответим!</p>
-          <div class="interest-container__contacts our-contacts">
+          <p class="interest__text">Остались вопросы?<br> Мы с радостью на них ответим!</p>
+          <div class="interest__contacts our-contacts">
             <div class="our-contacts__element">
               <div class="our-contacts__img" >
-                <img class="our-contacts__img__phone" src="img/phone-button.svg"  height="15" width="15">
+                <svg class="our-contacts__img__phone" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49995 0.0859375C5.7035 0.0859375 2.90033 0.558605 1.88322 1.50071C1.03934 2.2823 0.758038 3.66308 0.663214 4.53732C0.663214 4.53732 0.650146 4.62371 0.650146 4.66087C0.650146 5.0037 0.944447 5.27865 1.30427 5.27865C1.34678 5.27865 2.92002 5.15816 3.86851 5.08404C3.89134 5.08091 3.91434 5.07785 3.93716 5.0717C4.29043 5.06248 4.57505 4.79059 4.57505 4.45392L4.57822 3.23679C4.57822 2.85993 4.90214 2.55716 5.3012 2.55716H11.6987C12.0978 2.55716 12.4218 2.8599 12.4218 3.23679L12.425 4.45392C12.425 4.79059 12.7095 5.06248 13.0628 5.0717C13.0854 5.07789 13.1085 5.08091 13.1315 5.08404C14.0801 5.15812 15.6533 5.27865 15.6957 5.27865C16.0553 5.27865 16.3499 5.0037 16.3499 4.66087C16.3499 4.62371 16.3368 4.53732 16.3368 4.53732C16.2419 3.66308 15.9609 2.28234 15.117 1.50071C14.0996 0.558605 11.2964 0.0859375 8.49995 0.0859375ZM8.49995 8.11752C7.7771 8.11752 7.19164 8.67043 7.19164 9.35311C7.19164 10.0358 7.7771 10.5887 8.49995 10.5887C9.22279 10.5887 9.80823 10.0358 9.80823 9.35311C9.80823 8.67043 9.22279 8.11752 8.49995 8.11752ZM7.51873 5.33731V4.56506C7.51873 4.13881 7.15236 3.79282 6.70106 3.79282C6.24977 3.79282 5.8834 4.13884 5.8834 4.56506V5.33731L1.47095 9.78869C1.16689 10.0698 0.977135 10.462 0.977135 10.8946V12.1333C0.977135 12.816 1.56264 13.3689 2.28545 13.3689H2.61254V14.1412C2.61254 14.5675 2.97895 14.9134 3.43025 14.9134C3.88154 14.9134 4.24792 14.5675 4.24792 14.1412V13.3689H12.752V14.1412C12.752 14.5675 13.1182 14.9134 13.5697 14.9134C14.021 14.9134 14.3873 14.5675 14.3873 14.1412V13.3689H14.7144C15.4373 13.3689 16.0227 12.816 16.0227 12.1333V10.8946C16.0227 10.462 15.833 10.0698 15.5289 9.78869L11.1166 5.33731V4.56506C11.1166 4.13881 10.7502 3.79282 10.2989 3.79282C9.84757 3.79282 9.48124 4.13884 9.48124 4.56506V5.33731H7.51873ZM8.49995 6.88189C9.94564 6.88189 11.1166 7.98777 11.1166 9.35311C11.1166 10.7185 9.94567 11.8244 8.49995 11.8244C7.05426 11.8244 5.88336 10.7185 5.88336 9.35311C5.88336 7.98774 7.05426 6.88189 8.49995 6.88189Z"/>
+                </svg>
               </div>
               <a class="our-contacts__phone">8 800 555-86-28
               </a>
             </div>
             <div class="our-contacts__element">
               <div class="our-contacts__img" >
-                <img class="our-contacts__img__email" src="img/mail-button.svg" height="12" width="18">
+                <svg class="our-contacts__img__email" width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1393 10.4663L11.8089 6.5L16.1393 2.53365L15.5488 1.90264L9.24997 7.67188L2.95117 1.90264L2.36066 2.53365L6.69108 6.5L2.36066 10.4663L2.95117 11.0974L7.33081 7.08594L9.24997 8.84375L11.1691 7.08594L15.5488 11.0974L16.1393 10.4663ZM1.57593 0.25C0.76692 0.25 0.111084 0.948839 0.111084 1.80786V11.1921C0.111084 12.0525 0.7616 12.75 1.57593 12.75H16.924C17.733 12.75 18.3889 12.0512 18.3889 11.1921V1.80786C18.3889 0.947478 17.7383 0.25 16.924 0.25H1.57593Z">
+                </svg>
               </div>
               <a class="our-contacts__email">mail@htmlacademy.ru
               </a>
@@ -336,16 +338,18 @@
           </div>
         </div>
       </section>
-      <section class="map-wrapper">
-        <div class="map-container">
+      <section class="address">
+        <div class="address__wrapper">
           <!--<h2 class="visually-hidden">Наше местоположение</h2>-->
-          <div class="map-contacts__element">
-              <div class="map-contacts__img" >
-                <img class="map-contacts__img--768" src="img/map-button.svg"  height="21" width="15">
+          <div class="address__element">
+              <div class="address__image" >
+                <svg class="address__image-svg" width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.5 0C4.15169 0 0.625 3.52669 0.625 7.875C0.625 12.9334 4.42846 15.1449 5.26923 16.1538C7.28846 18.5769 7.40257 21 8.5 21C9.59743 21 9.71154 18.5769 11.7308 16.1538C12.5715 15.1449 16.375 12.9334 16.375 7.875C16.375 3.52669 12.8483 0 8.5 0ZM8.5 13.125C5.60069 13.125 3.25 10.7743 3.25 7.875C3.25 4.97569 5.60069 2.625 8.5 2.625C11.3993 2.625 13.75 4.97569 13.75 7.875C13.75 10.7743 11.3993 13.125 8.5 13.125ZM8.5 5.25C7.051 5.25 5.875 6.426 5.875 7.875C5.875 9.324 7.051 10.5 8.5 10.5C9.949 10.5 11.125 9.324 11.125 7.875C11.125 6.426 9.949 5.25 8.5 5.25Z"/>
+                </svg>
               </div>
-              <address class="map-container_address"> ул. Большая <br>Конюшенная, 19/8</address>
+              <address class="address__text"> ул. Большая <br>Конюшенная, 19/8</address>
           </div>
-          <button class="map-container__button">Проложить маршрут</button>
+          <button class="address__button"><p>Проложить маршрут</p></button>
         </div>
       </section>
       <section class="map">
@@ -355,15 +359,17 @@
       </section>
     </main>
     <footer class="main-footer">
-      <div class="main-footer-img"></div>
-      <div class="main-footer__list social-list">
-        <a class="sovial-list__fb"><img src="img/fb_footer.svg"></a>
-        <a class="sovial-list__vk"><img src="img/vk_footer.svg"></a>
-        <a class="sovial-list__ig"><img src="img/inst_footer.svg"></a>
-      </div>
-      <div class="main-footer__developer-container developer">
-        <p class="developer__text">Разработано</p>
-        <img class="developer__img" src="img/html-academy.svg">
+      <div class="main-footer__wrapper">
+        <div class="main-footer__img"></div>
+        <div class="main-footer__list social-list">
+          <a class="social-list__fb"><img src="../img/fb_footer.svg"></a>
+          <a class="social-list__vk"><img src="../img/vk_footer.svg"></a>
+          <a class="social-list__ig"><img src="../img/inst_footer.svg"></a>
+        </div>
+        <div class="main-footer__developer-container developer">
+          <p class="developer__text">Разработано</p>
+          <img class="developer__img" src="../img/html-academy.svg">
+        </div>
       </div>
     </footer>
   </body>

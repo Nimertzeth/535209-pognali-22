@@ -16,16 +16,41 @@
     </div>
     <header class="main-header">
       <div class="main-menu">
-        <a class="main-header__logo main-header__logo--open">
+        <a id="main-logo" class="main-header__logo main-header__logo--open">
           <img class="main-header__logo--320" src="img/logo.svg" width="96" height="15">
           <img class="main-header__logo--768" src="img/logo-768.svg" width="166" height="42">
           <img class="main-header__logo--1440" src="img/logo-768.svg" width="200" height="52">
         </a>
-        <button class="main-nav__toggle" aria-label="Открыть меню">
-        </button>
-        <nav class="main-nav">
+        <a id="second-logo" class="main-header__logo main-header__logo--open close">
+          <img class="main-header__logo--320" src="img/second-logo.svg" width="96" height="15">
+          <img class="main-header__logo--768" src="img/second-logo-768.svg" width="166" height="42">
+        </a>
+        <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
+        <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
+        <a class="user-list-desktop__login--tablet" href="login.html">
+              Авторизация
+            </a>
+         <script>
+            function showMenu(){
+                document.getElementById("main-logo").classList.add('close');
+                document.getElementById("second-logo").classList.remove('close');
+                document.getElementById("button-open-menu").classList.add('close');
+                document.getElementById("button-close-menu").classList.remove('close');
+                document.getElementById("menu").classList.remove('close-menu');
+
+              }
+            function closeMenu(){
+                document.getElementById("second-logo").classList.add('close');
+                document.getElementById("main-logo").classList.remove('close');
+                document.getElementById("button-close-menu").classList.add('close');
+                document.getElementById("button-open-menu").classList.remove('close');
+                document.getElementById("menu").classList.add('close-menu');
+
+              }
+          </script>
+        <nav id="menu" class="main-nav close-menu">
           <div class="main-nav__wrapper">
-            <ul class="main-nav__list site-list">
+            <ul id="site-list" class="main-nav__list site-list">
               <li class="site-list__item">
                 <a href="">О сервисе</a>
               </li>
@@ -47,21 +72,32 @@
             </a>
           </div>
           <div class="main-nav__list user-list-mobile">
-            <a class="user-list-mobile__login" href="login.html">
-              Авторизация
-            </a>
-            <div class="our-contacts">
-              <a class="our-contacts__phone">8 800 555-86-28
-              </a>
-              <a class="our-contacts__email">mail@htmlacademy.ru
-              </a>
+            <div class="interest__contacts our-contacts user-list-mobile__contacts">
+              <div class="our-contacts__element user-list-mobile__contacts__element">
+                <div class="our-contacts__img user-list-mobile__contacts__element__img">
+                  <svg class="our-contacts__img__phone" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49995 0.0859375C5.7035 0.0859375 2.90033 0.558605 1.88322 1.50071C1.03934 2.2823 0.758038 3.66308 0.663214 4.53732C0.663214 4.53732 0.650146 4.62371 0.650146 4.66087C0.650146 5.0037 0.944447 5.27865 1.30427 5.27865C1.34678 5.27865 2.92002 5.15816 3.86851 5.08404C3.89134 5.08091 3.91434 5.07785 3.93716 5.0717C4.29043 5.06248 4.57505 4.79059 4.57505 4.45392L4.57822 3.23679C4.57822 2.85993 4.90214 2.55716 5.3012 2.55716H11.6987C12.0978 2.55716 12.4218 2.8599 12.4218 3.23679L12.425 4.45392C12.425 4.79059 12.7095 5.06248 13.0628 5.0717C13.0854 5.07789 13.1085 5.08091 13.1315 5.08404C14.0801 5.15812 15.6533 5.27865 15.6957 5.27865C16.0553 5.27865 16.3499 5.0037 16.3499 4.66087C16.3499 4.62371 16.3368 4.53732 16.3368 4.53732C16.2419 3.66308 15.9609 2.28234 15.117 1.50071C14.0996 0.558605 11.2964 0.0859375 8.49995 0.0859375ZM8.49995 8.11752C7.7771 8.11752 7.19164 8.67043 7.19164 9.35311C7.19164 10.0358 7.7771 10.5887 8.49995 10.5887C9.22279 10.5887 9.80823 10.0358 9.80823 9.35311C9.80823 8.67043 9.22279 8.11752 8.49995 8.11752ZM7.51873 5.33731V4.56506C7.51873 4.13881 7.15236 3.79282 6.70106 3.79282C6.24977 3.79282 5.8834 4.13884 5.8834 4.56506V5.33731L1.47095 9.78869C1.16689 10.0698 0.977135 10.462 0.977135 10.8946V12.1333C0.977135 12.816 1.56264 13.3689 2.28545 13.3689H2.61254V14.1412C2.61254 14.5675 2.97895 14.9134 3.43025 14.9134C3.88154 14.9134 4.24792 14.5675 4.24792 14.1412V13.3689H12.752V14.1412C12.752 14.5675 13.1182 14.9134 13.5697 14.9134C14.021 14.9134 14.3873 14.5675 14.3873 14.1412V13.3689H14.7144C15.4373 13.3689 16.0227 12.816 16.0227 12.1333V10.8946C16.0227 10.462 15.833 10.0698 15.5289 9.78869L11.1166 5.33731V4.56506C11.1166 4.13881 10.7502 3.79282 10.2989 3.79282C9.84757 3.79282 9.48124 4.13884 9.48124 4.56506V5.33731H7.51873ZM8.49995 6.88189C9.94564 6.88189 11.1166 7.98777 11.1166 9.35311C11.1166 10.7185 9.94567 11.8244 8.49995 11.8244C7.05426 11.8244 5.88336 10.7185 5.88336 9.35311C5.88336 7.98774 7.05426 6.88189 8.49995 6.88189Z"/>
+                  </svg>
+                </div>
+                <a href="tel:+7800555862" class="our-contacts__phone">8 800 555-86-28
+                </a>
+              </div>
+              <div class="our-contacts__element user-list-mobile__contacts__element">
+                <div class="our-contacts__img user-list-mobile__contacts__element__img">
+                  <svg class="our-contacts__img__email" width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1393 10.4663L11.8089 6.5L16.1393 2.53365L15.5488 1.90264L9.24997 7.67188L2.95117 1.90264L2.36066 2.53365L6.69108 6.5L2.36066 10.4663L2.95117 11.0974L7.33081 7.08594L9.24997 8.84375L11.1691 7.08594L15.5488 11.0974L16.1393 10.4663ZM1.57593 0.25C0.76692 0.25 0.111084 0.948839 0.111084 1.80786V11.1921C0.111084 12.0525 0.7616 12.75 1.57593 12.75H16.924C17.733 12.75 18.3889 12.0512 18.3889 11.1921V1.80786C18.3889 0.947478 17.7383 0.25 16.924 0.25H1.57593Z">
+                  </svg>
+                </div>
+                <a href="mailto:mail@htmlacademy.ru" class="our-contacts__email">mail@htmlacademy.ru
+                </a>
+              </div>
             </div>
           </div>
-          <div class="main-nav__social-list">
-            <a class="soсial-list__fb"><img src=""></a>
-            <a class="soсial-list__vk"><img src=""></a>
-            <a class="soсial-list__ig"><img src=""></a>
-          </div>
+          <div class="user-list-mobile__social-list social-list">
+          <a class="social-list__fb"><img src="img/fb_footer.svg"></a>
+          <a class="social-list__vk"><img src="img/vk_footer.svg"></a>
+          <a class="social-list__ig"><img src="img/inst_footer.svg"></a>
+        </div>
         </nav>
       </div>
     </header>
@@ -143,7 +179,7 @@
             </p>
             <p class="about-service__appeal">А если найдете кого-то близкого по духу — скорее зовите в совместный трип!
             </p>
-            <button class="button-standart about-service_button"><p>Подробнее</p></button>
+            <button class="button-standart about-service_button">Подробнее</button>
           </div>
           <div class="about-service__img-container">
             <img class="about-service__img" src="">
@@ -195,7 +231,7 @@
               </div>
             </div>
           </div>
-          <button class="button-standart"><p>Показать все</p></button>
+          <button class="button-standart">Показать все</button>
         </div>
       </section >
       <section class="companion">
@@ -219,9 +255,9 @@
                 </div>
               <div class="companion-card__info-container info-container">
                 <div class="info-container__country">
-                  <img src="img/seychelles.svg">
-                  <img src="img/thailand.svg">
-                  <img src="img/sri-lanka.svg">
+                  <div class="tooltip tooltip--seychelles"><img src="img/seychelles.svg"></div>
+                  <div class="tooltip tooltip--thailand"><img src="img/thailand.svg"></div>
+                  <div class="tooltip tooltip--shrilanka"><img src="img/sri-lanka.svg"></div>
                 </div>
                 <div class="companion-card__name">
                   <p><span class="companion-card__name--inactive"></span>Таня Фирсова</p>
@@ -230,11 +266,19 @@
                   <p>#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</p>
                 </div>
                 <div class="companion-card__features">
-                  <img class="companion-card__features-img companion-card__features--active" src="img/icon_plane.svg">
-                  <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_bus.svg">
-                  <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_bicycle.svg">
-                  <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_run.svg">
-                </div>
+                    <div class="tooltip tooltip--features tooltip--plane">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_plane.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--bus">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_bus.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--bicycle">
+                      <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_bicycle.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--run">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_run.svg">
+                    </div>
+                  </div>
               </div>
             </div>
               <div class="companion-card">
@@ -246,8 +290,8 @@
                 </div>
                 <div class="companion-card__info-container info-container">
                   <div class="info-container__country">
-                    <img src="img/belgium.svg">
-                    <img src="img/czech.svg">
+                    <div class="tooltip tooltip--belgium"><img src="img/belgium.svg"></div>
+                    <div class="tooltip tooltip--czech"><img src="img/czech.svg"></div>
                   </div>
                   <div class="companion-card__name">
                     <p><span class="companion-card__name--active"></span>Петя Демин</p>
@@ -256,15 +300,23 @@
                     <p>#бургер #бар #футбол #концерт #крафт</p>
                   </div>
                   <div class="companion-card__features">
-                    <img class="companion-card__features-img companion-card__features--active" src="img/icon_plane.svg">
-                    <img class="companion-card__features-img companion-card__features--active" src="img/icon_bus.svg">
-                    <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_bicycle.svg">
-                    <img class="companion-card__features-img companion-card__features--active" src="img/icon_run.svg">
+                    <div class="tooltip tooltip--features tooltip--plane">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_plane.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--bus">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_bus.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--bicycle">
+                      <img class="companion-card__features-img companion-card__features--inactive" src="img/icon_bicycle.svg">
+                    </div>
+                    <div class="tooltip tooltip--features tooltip--run">
+                      <img class="companion-card__features-img companion-card__features--active" src="img/icon_run.svg">
+                    </div>
                   </div>
                 </div>
             </div>
           </div>
-          <button class="button-standart companion__button"><p>Показать всеx</p></button>
+          <button class="button-standart companion__button">Показать всеx</button>
         </div>
       </section>
       <section class="profile-wrapper">
@@ -308,8 +360,14 @@
             <div class="profile-container__busines-img" >
               <img src="img/icon_businessman.svg">
             </div>
-            <a class="profile-container__busines" href="">Показать тарифы для бизнеса</a>
+            <a onclick="showBusines()" class="profile-container__busines">Показать тарифы для бизнеса</a>
           </div>
+          <script>
+            function showBusines(){
+                document.getElementById("business-tarif").classList.add('business-tarif--active');
+                document.getElementById("business-tarif").classList.remove('business-tarif--inactive');
+              }
+          </script>
         </div>
       </section>
       <section class="interest">
@@ -331,7 +389,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49995 0.0859375C5.7035 0.0859375 2.90033 0.558605 1.88322 1.50071C1.03934 2.2823 0.758038 3.66308 0.663214 4.53732C0.663214 4.53732 0.650146 4.62371 0.650146 4.66087C0.650146 5.0037 0.944447 5.27865 1.30427 5.27865C1.34678 5.27865 2.92002 5.15816 3.86851 5.08404C3.89134 5.08091 3.91434 5.07785 3.93716 5.0717C4.29043 5.06248 4.57505 4.79059 4.57505 4.45392L4.57822 3.23679C4.57822 2.85993 4.90214 2.55716 5.3012 2.55716H11.6987C12.0978 2.55716 12.4218 2.8599 12.4218 3.23679L12.425 4.45392C12.425 4.79059 12.7095 5.06248 13.0628 5.0717C13.0854 5.07789 13.1085 5.08091 13.1315 5.08404C14.0801 5.15812 15.6533 5.27865 15.6957 5.27865C16.0553 5.27865 16.3499 5.0037 16.3499 4.66087C16.3499 4.62371 16.3368 4.53732 16.3368 4.53732C16.2419 3.66308 15.9609 2.28234 15.117 1.50071C14.0996 0.558605 11.2964 0.0859375 8.49995 0.0859375ZM8.49995 8.11752C7.7771 8.11752 7.19164 8.67043 7.19164 9.35311C7.19164 10.0358 7.7771 10.5887 8.49995 10.5887C9.22279 10.5887 9.80823 10.0358 9.80823 9.35311C9.80823 8.67043 9.22279 8.11752 8.49995 8.11752ZM7.51873 5.33731V4.56506C7.51873 4.13881 7.15236 3.79282 6.70106 3.79282C6.24977 3.79282 5.8834 4.13884 5.8834 4.56506V5.33731L1.47095 9.78869C1.16689 10.0698 0.977135 10.462 0.977135 10.8946V12.1333C0.977135 12.816 1.56264 13.3689 2.28545 13.3689H2.61254V14.1412C2.61254 14.5675 2.97895 14.9134 3.43025 14.9134C3.88154 14.9134 4.24792 14.5675 4.24792 14.1412V13.3689H12.752V14.1412C12.752 14.5675 13.1182 14.9134 13.5697 14.9134C14.021 14.9134 14.3873 14.5675 14.3873 14.1412V13.3689H14.7144C15.4373 13.3689 16.0227 12.816 16.0227 12.1333V10.8946C16.0227 10.462 15.833 10.0698 15.5289 9.78869L11.1166 5.33731V4.56506C11.1166 4.13881 10.7502 3.79282 10.2989 3.79282C9.84757 3.79282 9.48124 4.13884 9.48124 4.56506V5.33731H7.51873ZM8.49995 6.88189C9.94564 6.88189 11.1166 7.98777 11.1166 9.35311C11.1166 10.7185 9.94567 11.8244 8.49995 11.8244C7.05426 11.8244 5.88336 10.7185 5.88336 9.35311C5.88336 7.98774 7.05426 6.88189 8.49995 6.88189Z"/>
                 </svg>
               </div>
-              <a class="our-contacts__phone">8 800 555-86-28
+              <a href="tel:+7800555862" class="our-contacts__phone">8 800 555-86-28
               </a>
             </div>
             <div class="our-contacts__element">
@@ -340,7 +398,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1393 10.4663L11.8089 6.5L16.1393 2.53365L15.5488 1.90264L9.24997 7.67188L2.95117 1.90264L2.36066 2.53365L6.69108 6.5L2.36066 10.4663L2.95117 11.0974L7.33081 7.08594L9.24997 8.84375L11.1691 7.08594L15.5488 11.0974L16.1393 10.4663ZM1.57593 0.25C0.76692 0.25 0.111084 0.948839 0.111084 1.80786V11.1921C0.111084 12.0525 0.7616 12.75 1.57593 12.75H16.924C17.733 12.75 18.3889 12.0512 18.3889 11.1921V1.80786C18.3889 0.947478 17.7383 0.25 16.924 0.25H1.57593Z">
                 </svg>
               </div>
-              <a class="our-contacts__email">mail@htmlacademy.ru
+              <a href="mailto:mail@htmlacademy.ru" class="our-contacts__email">mail@htmlacademy.ru
               </a>
             </div>
           </div>
@@ -357,7 +415,7 @@
               </div>
               <address class="address__text"> ул. Большая <br>Конюшенная, 19/8</address>
           </div>
-          <button class="address__button"><p>Проложить маршрут</p></button>
+          <button class="address__button">Проложить маршрут</button>
         </div>
       </section>
       <section class="map">
@@ -370,15 +428,45 @@
       <div class="main-footer__wrapper">
         <div class="main-footer__img"></div>
         <div class="main-footer__list social-list">
-          <a class="social-list__fb"><img src="../img/fb_footer.svg"></a>
-          <a class="social-list__vk"><img src="../img/vk_footer.svg"></a>
-          <a class="social-list__ig"><img src="../img/inst_footer.svg"></a>
+          <a class="social-list__fb"><img src="img/fb_footer.svg"></a>
+          <a class="social-list__vk"><img src="img/vk_footer.svg"></a>
+          <a class="social-list__ig"><img src="img/inst_footer.svg"></a>
         </div>
         <div class="main-footer__developer-container developer">
           <p class="developer__text">Разработано</p>
-          <img class="developer__img" src="../img/html-academy.svg">
+          <img class="developer__img" src="img/html-academy.svg">
         </div>
       </div>
     </footer>
+    <div class="business-tarif business-tarif--inactive" id="business-tarif">
+      <div class="test">
+        <h2 class="business-tarif-title">Бизнес-тарифы</h2>
+        <ul class="business-tarif__list">
+          <li class="business-tarif__element">
+            <p class="business-tarif__element__text">Реклама у блоггера</p>
+            <p class="business-tarif__element__price">300 000 руб./пост</p>
+          </li>
+          <li class="business-tarif__element">
+            <p class="business-tarif__element__text">Накрутка подписчиков</p>
+            <p class="business-tarif__element__price">от 1 руб./шт.</p>
+          </li>
+          <li class="business-tarif__element">
+            <p class="business-tarif__element__text">Лайки от ботов</p>
+            <p class="business-tarif__element__price">от 20 коп./лайк</p>
+          </li>
+          <li class="business-tarif__element">
+            <p class="business-tarif__element__text">Ваш продакт-плейсмент</p>
+            <p class="business-tarif__element__price">Индивидуально</p>
+          </li>
+        </ul>
+        <button onclick="closeBusines()" class="business-tarif__button">Закрыть окно</button>
+      </div>
+      <script>
+            function closeBusines(){
+                document.getElementById("business-tarif").classList.remove('business-tarif--active');
+                document.getElementById("business-tarif").classList.add('business-tarif--inactive');
+              }
+          </script>
+    </div>
   </body>
 </html>

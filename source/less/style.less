@@ -63,10 +63,12 @@ input {outline:none;}
   }
 }
 .main-header{
-  padding-top: 13px;
+  padding-top: 19px;
+  padding-bottom: 31px;
   background: #161C35;
   @media screen and (min-width: 500px) and (max-width: 1023px){
      background: #192144;
+     padding-bottom: 42px;
     }
   @media screen and (min-width: 600px){
     padding-top: 40px;
@@ -96,6 +98,11 @@ input {outline:none;}
   @media screen and (min-width: 1024px) and (max-width: 1439px){
      margin-right: 100px;
     }
+}
+.main-header__logo--scroll{
+  @media screen and (max-width: 767px){
+  top:4px;
+  }
 }
 .main-header__logo--320{
   @media screen and (min-width: 600px){
@@ -153,6 +160,14 @@ input {outline:none;}
     margin-top: -5px;
   }
 }
+.main-nav__toggle--scroll{
+  background:rgba(204, 204, 204, 1);
+  box-shadow: 0 7px 0 rgba(204, 204, 204, 1);
+  position:relative;
+  @media screen and (max-width: 767px){
+    top:2px;
+  }
+}
 .main-menu{
   position:relative;
   display: flex;
@@ -187,7 +202,7 @@ input {outline:none;}
   display: none;
   @media screen and (min-width: 320px) and (max-width: 599px){
     display: flex;
-    top:-14px;
+    top:-20px;
     flex-direction: column;
     width: 100%;
     background:white;
@@ -439,13 +454,18 @@ input {outline:none;}
   width: 60px;
   height: 2px;
   top:9px;
-  background-color: white;
   left: -105px;
   z-index:1111;
   @media screen and (min-width: 1024px) and (max-width: 1439px){
     width: 40px;
     left: -75px;
     }
+}
+.site-list--white-line:after{
+  background-color: white;
+}
+.site-list--blue-line:after{
+  background-color: rgba(25, 33, 68, 1);
 }
 .site-list a{
   @media screen and (min-width: 320px) and (max-width: 1023px){
@@ -624,7 +644,7 @@ input {outline:none;}
   margin-top: -1px;
 }
 .travel-container{
-  padding-top:60px;
+  padding-top:21px;
   position:relative;
   background: url(../img/globe-back-mobile.png) no-repeat;
   background-color: #161C35;
@@ -685,7 +705,7 @@ input {outline:none;}
   margin: 0 auto;
 
   @media screen and (min-width: 768px){
-    margin-top: 72px;
+    margin-top: 30px;
     font-size: 60px;
     line-height: 70px;
     width:399px;
@@ -7413,6 +7433,7 @@ input {outline:none;}
   border-bottom:1px solid rgba(0, 0, 0, 0.05);
 }
 .business-tarif__button{
+  cursor: pointer;
   border:none;
   width: 100%;
   font-family: bloggersans-bold;
@@ -7421,7 +7442,7 @@ input {outline:none;}
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
-  color: #1D2E5B;
+  color: rgba(29, 46, 91, 1);
   border-radius:0 0 20px 20px;
   background:rgba(243, 244, 248, 1);
   @media screen and (min-width: 768px){
@@ -7433,4 +7454,29 @@ input {outline:none;}
   @media screen and (min-width: 1440px){
     line-height: 26px;
   }
+}
+.business-tarif__button:hover{
+  color: rgba(29, 46, 91, 0.8);
+}
+.business-tarif__button:active{
+  color: rgba(29, 46, 91, 0.3);
+}
+.main-header--scroll{
+  width: 100%;
+  background:white;
+  position:sticky;
+  z-index: 999999999;
+  top:0;
+  color: rgba(29, 46, 91, 1);
+  padding-bottom: 31px;
+  @media screen and (min-width: 768px){
+    padding-bottom: 42px;
+  }
+  @media screen and (min-width: 1440px){
+    padding-bottom: 20px;
+    padding-top:20px;
+  }
+}
+.site-list__item > .site-list__item__link--scroll{
+  color:rgba(25, 33, 68, 1);
 }

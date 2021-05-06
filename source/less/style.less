@@ -7480,3 +7480,27 @@ input {outline:none;}
 .site-list__item > .site-list__item__link--scroll{
   color:rgba(25, 33, 68, 1);
 }
+.site-list__item{
+  overflow: hidden;
+  position: relative;
+}
+.site-list__item a{
+  position: relative;
+}
+.site-list__item a:after{
+  content: attr(data-hover);
+  position: absolute;
+  top:90%;
+  left: 0;
+  font-family: "bloggersans-bold";
+  white-space: nowrap;
+}
+.site-list__item:hover a{
+    display: block;
+    transition: transform 0.7s;
+    transform: translate3d(0,-18px,0);
+}
+.site-list__item:hover a:after{
+  transition: transform 0.3s;
+  transform: translate3d(0,0,0);
+}

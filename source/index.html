@@ -14,16 +14,45 @@
       <div class="grid__element"></div>
       <div class="grid__element"></div>
     </div>
-    <header class="main-header">
+    <header id="main-header" class="main-header ">
+      <script >
+window.onscroll = function(){
+ var html = document.documentElement, body = document.body;
+ var BlkStyle = document.getElementById('main-header').style;
+ if(html.scrollTop>60||body.scrollTop>60) { //alert()
+        document.getElementById("main-header").classList.add('main-header--scroll');
+        document.getElementById("main-logo").classList.add('close');
+        document.getElementById("second-logo").classList.remove('close');
+        document.getElementById("site-list__item__link1").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link2").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link3").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list").classList.remove('site-list--white-line');
+        document.getElementById("site-list").classList.add('site-list--blue-line');
+        document.getElementById("button-open-menu").classList.add('main-nav__toggle--scroll');
+ }
+  else{
+        document.getElementById("main-header").classList.remove('main-header--scroll');
+        document.getElementById("main-logo").classList.remove('close');
+        document.getElementById("second-logo").classList.add('close');
+        document.getElementById("site-list__item__link1").classList.remove('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link2").classList.remove('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link3").classList.remove('site-list__item__link--scroll');
+        document.getElementById("site-list").classList.add('site-list--white-line');
+        document.getElementById("site-list").classList.remove('site-list--blue-line');
+        document.getElementById("button-open-menu").classList.remove('main-nav__toggle--scroll');
+  }
+}
+      </script>
       <div class="main-menu">
         <a id="main-logo" class="main-header__logo main-header__logo--open">
           <img class="main-header__logo--320" src="img/logo.svg" width="96" height="15">
           <img class="main-header__logo--768" src="img/logo-768.svg" width="166" height="42">
           <img class="main-header__logo--1440" src="img/logo-768.svg" width="200" height="52">
         </a>
-        <a id="second-logo" class="main-header__logo main-header__logo--open close">
+        <a id="second-logo" class="main-header__logo main-header__logo--scroll main-header__logo--open close">
           <img class="main-header__logo--320" src="img/second-logo.svg" width="96" height="15">
           <img class="main-header__logo--768" src="img/second-logo-768.svg" width="166" height="42">
+          <img class="main-header__logo--1440" src="img/logo-1440.png" width="200" height="52">
         </a>
         <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
         <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
@@ -37,7 +66,6 @@
                 document.getElementById("button-open-menu").classList.add('close');
                 document.getElementById("button-close-menu").classList.remove('close');
                 document.getElementById("menu").classList.remove('close-menu');
-
               }
             function closeMenu(){
                 document.getElementById("second-logo").classList.add('close');
@@ -45,20 +73,19 @@
                 document.getElementById("button-close-menu").classList.add('close');
                 document.getElementById("button-open-menu").classList.remove('close');
                 document.getElementById("menu").classList.add('close-menu');
-
               }
           </script>
         <nav id="menu" class="main-nav close-menu">
           <div class="main-nav__wrapper">
-            <ul id="site-list" class="main-nav__list site-list">
+            <ul id="site-list" class="main-nav__list site-list site-list--white-line">
               <li class="site-list__item">
-                <a href="">О сервисе</a>
+                <a id="site-list__item__link1" class="" href="">О сервисе</a>
               </li>
               <li class="site-list__item">
-                <a href="form.html">Направления</a>
+                <a id="site-list__item__link2" class="" href="form.html">Направления</a>
               </li>
               <li class="site-list__item">
-                <a href="catalog.html">Попутчики</a>
+                <a id="site-list__item__link3" class="" href="catalog.html">Попутчики</a>
               </li>
             </ul>
           </div>
@@ -357,7 +384,7 @@
             <img class="profile-container__img--1440" src="img/rates.svg" width="198" height="198">
           </div>
           <div class="profile__busines-container">
-            <div class="profile-container__busines-img" >
+            <div onclick="showBusines()" class="profile-container__busines-img" >
               <img src="img/icon_businessman.svg">
             </div>
             <a onclick="showBusines()" class="profile-container__busines">Показать тарифы для бизнеса</a>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head class="page">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>HTML Academy: Погнали</title>
+  </head>
+  <body class="page__body">
+    <div class="grid" style="display: none;">
+      <div class="grid__element"></div>
+      <div class="grid__element"></div>
+      <div class="grid__element"></div>
+      <div class="grid__element"></div>
+    </div>
+    <header id="main-header" class="main-header main-header-catalog">
+      <script >
+        window.onscroll = function(){
+         var html = document.documentElement, body = document.body;
+         var BlkStyle = document.getElementById('main-header').style;
+         if(html.scrollTop>60||body.scrollTop>60) { //alert()
+        document.getElementById("main-header").classList.add('main-header--scroll');
+        document.getElementById("main-logo").classList.add('close');
+        document.getElementById("second-logo").classList.remove('close');
+        document.getElementById("site-list__item__link1").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link2").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list__item__link3").classList.add('site-list__item__link--scroll');
+        document.getElementById("site-list").classList.remove('site-list--white-line');
+        document.getElementById("site-list").classList.add('site-list--blue-line');
+        document.getElementById("button-open-menu").classList.add('main-nav__toggle--scroll');
+     }
+      else{
+            document.getElementById("main-header").classList.remove('main-header--scroll');
+            document.getElementById("main-logo").classList.remove('close');
+            document.getElementById("second-logo").classList.add('close');
+            document.getElementById("site-list__item__link1").classList.remove('site-list__item__link--scroll');
+            document.getElementById("site-list__item__link2").classList.remove('site-list__item__link--scroll');
+            document.getElementById("site-list__item__link3").classList.remove('site-list__item__link--scroll');
+            document.getElementById("site-list").classList.add('site-list--white-line');
+            document.getElementById("site-list").classList.remove('site-list--blue-line');
+            document.getElementById("button-open-menu").classList.remove('main-nav__toggle--scroll');
+      }
+      }
+      </script>
+      <div class="main-menu">
+        <a href="index.html" id="main-logo" class="main-header__logo main-header__logo--open">
+          <img alt="Лого" class="main-header__logo--320" src="img/logo.svg" width="96" height="15">
+          <img alt="Лого" class="main-header__logo--768" src="img/logo-768.svg" width="166" height="42">
+          <img alt="Лого" class="main-header__logo--1440" src="img/logo-768.svg" width="200" height="52">
+        </a>
+        <a id="second-logo" class="main-header__logo main-header__logo--scroll main-header__logo--open close">
+          <img alt="Лого" class="main-header__logo--320" src="img/second-logo.svg" width="96" height="15">
+          <img alt="Лого" class="main-header__logo--768" src="img/second-logo-768.svg" width="166" height="42">
+          <img alt="Лого" class="main-header__logo--1440" src="img/logo-1440.png" width="200" height="52">
+        </a>
+        <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
+        <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
+        <a class="user-list-desktop__login--tablet" href="login.html">
+              Авторизация
+            </a>
+         <script>
+            function showMenu(){
+                document.getElementById("main-logo").classList.add('close');
+                document.getElementById("second-logo").classList.remove('close');
+                document.getElementById("button-open-menu").classList.add('close');
+                document.getElementById("button-close-menu").classList.remove('close');
+                document.getElementById("menu").classList.remove('close-menu');
+              }
+            function closeMenu(){
+                document.getElementById("second-logo").classList.add('close');
+                document.getElementById("main-logo").classList.remove('close');
+                document.getElementById("button-close-menu").classList.add('close');
+                document.getElementById("button-open-menu").classList.remove('close');
+                document.getElementById("menu").classList.add('close-menu');
+              }
+          </script>
+        <nav id="menu" class="main-nav close-menu">
+          <div class="main-nav__wrapper">
+            <ul id="site-list" class="main-nav__list site-list site-list--white-line">
+              <li class="site-list__item">
+                <a data-hover="О сервисе" id="site-list__item__link1" class="site-list__item__service" href="">О сервисе</a>
+              </li>
+              <li class="site-list__item">
+                <a data-hover="Направления" id="site-list__item__link2" class="site-list__item__direction" href="form.html">Направления</a>
+              </li>
+              <li class="site-list__item">
+                <a data-hover="Попутчики" id="site-list__item__link3" class="site-list__item__travelers" href="catalog.html">Попутчики</a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-nav__list user-list-desktop">
+            <a class="user-list-desktop__phone"><img alt="телефон" src="img/button_phone.svg">
+            </a>
+            <a class="user-list-desktop__email"><img alt="почта" src="img/button_mail.svg">
+            </a>
+            <a class="user-list-desktop__login" href="login.html">
+             Авторизация
+            </a>
+          </div>
+          <div class="main-nav__list user-list-mobile">
+            <div class="interest__contacts our-contacts user-list-mobile__contacts">
+              <div class="our-contacts__element user-list-mobile__contacts__element">
+                <div class="our-contacts__img user-list-mobile__contacts__element__img">
+                  <svg class="our-contacts__img__phone" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49995 0.0859375C5.7035 0.0859375 2.90033 0.558605 1.88322 1.50071C1.03934 2.2823 0.758038 3.66308 0.663214 4.53732C0.663214 4.53732 0.650146 4.62371 0.650146 4.66087C0.650146 5.0037 0.944447 5.27865 1.30427 5.27865C1.34678 5.27865 2.92002 5.15816 3.86851 5.08404C3.89134 5.08091 3.91434 5.07785 3.93716 5.0717C4.29043 5.06248 4.57505 4.79059 4.57505 4.45392L4.57822 3.23679C4.57822 2.85993 4.90214 2.55716 5.3012 2.55716H11.6987C12.0978 2.55716 12.4218 2.8599 12.4218 3.23679L12.425 4.45392C12.425 4.79059 12.7095 5.06248 13.0628 5.0717C13.0854 5.07789 13.1085 5.08091 13.1315 5.08404C14.0801 5.15812 15.6533 5.27865 15.6957 5.27865C16.0553 5.27865 16.3499 5.0037 16.3499 4.66087C16.3499 4.62371 16.3368 4.53732 16.3368 4.53732C16.2419 3.66308 15.9609 2.28234 15.117 1.50071C14.0996 0.558605 11.2964 0.0859375 8.49995 0.0859375ZM8.49995 8.11752C7.7771 8.11752 7.19164 8.67043 7.19164 9.35311C7.19164 10.0358 7.7771 10.5887 8.49995 10.5887C9.22279 10.5887 9.80823 10.0358 9.80823 9.35311C9.80823 8.67043 9.22279 8.11752 8.49995 8.11752ZM7.51873 5.33731V4.56506C7.51873 4.13881 7.15236 3.79282 6.70106 3.79282C6.24977 3.79282 5.8834 4.13884 5.8834 4.56506V5.33731L1.47095 9.78869C1.16689 10.0698 0.977135 10.462 0.977135 10.8946V12.1333C0.977135 12.816 1.56264 13.3689 2.28545 13.3689H2.61254V14.1412C2.61254 14.5675 2.97895 14.9134 3.43025 14.9134C3.88154 14.9134 4.24792 14.5675 4.24792 14.1412V13.3689H12.752V14.1412C12.752 14.5675 13.1182 14.9134 13.5697 14.9134C14.021 14.9134 14.3873 14.5675 14.3873 14.1412V13.3689H14.7144C15.4373 13.3689 16.0227 12.816 16.0227 12.1333V10.8946C16.0227 10.462 15.833 10.0698 15.5289 9.78869L11.1166 5.33731V4.56506C11.1166 4.13881 10.7502 3.79282 10.2989 3.79282C9.84757 3.79282 9.48124 4.13884 9.48124 4.56506V5.33731H7.51873ZM8.49995 6.88189C9.94564 6.88189 11.1166 7.98777 11.1166 9.35311C11.1166 10.7185 9.94567 11.8244 8.49995 11.8244C7.05426 11.8244 5.88336 10.7185 5.88336 9.35311C5.88336 7.98774 7.05426 6.88189 8.49995 6.88189Z"/></svg>
+                </div>
+                <a href="tel:+7800555862" class="our-contacts__phone">8 800 555-86-28
+                </a>
+              </div>
+              <div class="our-contacts__element user-list-mobile__contacts__element">
+                <div class="our-contacts__img user-list-mobile__contacts__element__img">
+                  <svg class="our-contacts__img__email" width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1393 10.4663L11.8089 6.5L16.1393 2.53365L15.5488 1.90264L9.24997 7.67188L2.95117 1.90264L2.36066 2.53365L6.69108 6.5L2.36066 10.4663L2.95117 11.0974L7.33081 7.08594L9.24997 8.84375L11.1691 7.08594L15.5488 11.0974L16.1393 10.4663ZM1.57593 0.25C0.76692 0.25 0.111084 0.948839 0.111084 1.80786V11.1921C0.111084 12.0525 0.7616 12.75 1.57593 12.75H16.924C17.733 12.75 18.3889 12.0512 18.3889 11.1921V1.80786C18.3889 0.947478 17.7383 0.25 16.924 0.25H1.57593Z"/></svg>
+                </div>
+                <a href="mailto:mail@htmlacademy.ru" class="our-contacts__email">mail@htmlacademy.ru
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="user-list-mobile__social-list social-list">
+          <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
+          <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
+          <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+        </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__headline-container headline-container">
+        <div class="headline-container__wrapper">
+          <h1 class="headline-container__title">Направления</h1>
+          <div class="headline-container__account-card">
+            <div class="headline-container__account-card__level">
+              <img alt="уровень 80" class="headline-container__account-card__level__img" src="img/level-80-form-desktop.png" width="95" height="95">
+            </div>
+            <div class="headline-container__account-card__photo-container">
+              <div class="headline-container__account-card__photo">
+              <img alt="аватарка" class="headline-container__account-card__img-mobile" src="img/demin-account-desktop.png" width="190" height="190">
+              </div>
+              <button class="headline-container__account-card__button">фото</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="account-card">
+        <div class="account-card__wrapper">
+          <div class="account-card__level">
+            <img alt="уровень 80" class="account-card__level__img" src="img/level-80-form.svg" width="100" height="100">
+          </div>
+          <div class="account-card__photo">
+            <img alt="аватарка" class="account-card__photo__img-mobile" src="img/demin-account-mobile.png" width="100" height="100">
+            <img alt="аватарка" class="account-card__photo__img-tab" src="img/demin-account-tab.png" width="94" height="94">
+          </div>
+          <button class="account-card__button">сменить фото</button>
+          <fieldset class="account-card__fieldset account-card__tegs">
+            <legend class="account-card__legend  account-card__tegs__legend">Теги</legend>
+            <textarea class="account-card__tegs__textarea" placeholder="#бургер #бар #футбол #концерт #крафт"></textarea>
+          </fieldset>
+          <fieldset class="account-card__fieldset account-card__transport fieldset-transport__list">
+            <legend class="account-card__legend account-card__transport__legend">Транспорт</legend>
+              <input class="fieldset-transport__cheсkbox" type="checkbox" name="run" checked id="run">
+              <label class="fieldset-transport__label" for="run">
+                <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.56128 4.24996C10.1663 4.24996 10.6567 3.6157 10.6567 2.83329C10.6567 2.05089 10.1663 1.41663 9.56128 1.41663C8.95628 1.41663 8.46582 2.05089 8.46582 2.83329C8.46582 3.6157 8.95628 4.24996 9.56128 4.24996Z"/>
+                <path d="M8.89155 7.76969C9.01729 8.01199 9.19764 8.19839 9.40812 8.30356C9.6186 8.40874 9.84901 8.42761 10.0681 8.3576L11.8843 7.77039L11.6198 6.39623L9.80352 6.98344L9.0482 5.51931C8.88682 5.20663 8.63637 4.98917 8.35148 4.91439L6.24491 4.36898C6.00924 4.30781 5.76456 4.34869 5.54865 4.48529C5.33274 4.62189 5.15761 4.84662 5.05031 5.12477L4.14217 7.4736L5.12206 8.10756L6.0302 5.75802L7.10759 6.0371L4.32183 12.0416H1.89319V13.4583H4.32183C4.70414 13.4583 5.064 13.1948 5.26119 12.7705L6.31173 10.5067L9.14295 11.2391L10.1376 15.0988L11.1761 14.6504L10.182 10.7914C10.1206 10.5545 10.0121 10.3427 9.86728 10.1773C9.72246 10.0119 9.5465 9.89879 9.35712 9.84935L7.69256 9.41939L8.66314 7.32698L8.89155 7.76969Z"/>
+                </svg>
+              </label>
+              <input class="fieldset-transport__cheсkbox" type="checkbox" name="bicycle" checked id="bicycle">
+              <label class="fieldset-transport__label" for="bicycle">
+                <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.958 13.9656C10.4441 13.9656 9.94179 13.8131 9.51451 13.5274C9.08722 13.2418 8.75419 12.8357 8.55753 12.3606C8.36087 11.8855 8.30941 11.3627 8.40967 10.8584C8.50992 10.354 8.75739 9.89076 9.12077 9.52715C9.48415 9.16353 9.94712 8.91591 10.4511 8.81558C10.9552 8.71526 11.4776 8.76675 11.9524 8.96354C12.4271 9.16033 12.8329 9.49358 13.1185 9.92114C13.404 10.3487 13.5563 10.8514 13.5563 11.3656C13.5556 12.055 13.2816 12.7158 12.7945 13.2033C12.3074 13.6907 11.6469 13.9649 10.958 13.9656ZM10.958 9.66997C10.6229 9.66997 10.2953 9.76942 10.0166 9.95574C9.73794 10.1421 9.52075 10.4069 9.39249 10.7167C9.26423 11.0266 9.23068 11.3675 9.29606 11.6964C9.36144 12.0254 9.52283 12.3275 9.75982 12.5646C9.99681 12.8018 10.2987 12.9633 10.6275 13.0287C10.9562 13.0941 11.2969 13.0605 11.6065 12.9322C11.9162 12.8039 12.1808 12.5865 12.367 12.3077C12.5532 12.0288 12.6526 11.701 12.6526 11.3656C12.6521 10.9161 12.4734 10.4851 12.1557 10.1672C11.838 9.84931 11.4073 9.6705 10.958 9.66997Z"/>
+                <path d="M3.50211 13.9656C2.98822 13.9656 2.48586 13.8131 2.05857 13.5274C1.63128 13.2418 1.29825 12.8357 1.10159 12.3606C0.904934 11.8855 0.853479 11.3627 0.953735 10.8584C1.05399 10.354 1.30146 9.89076 1.66484 9.52715C2.02821 9.16353 2.49119 8.91591 2.99521 8.81558C3.49923 8.71526 4.02166 8.76675 4.49644 8.96354C4.97122 9.16033 5.37702 9.49358 5.66252 9.92114C5.94803 10.3487 6.10042 10.8514 6.10042 11.3656C6.09967 12.055 5.82568 12.7158 5.33856 13.2033C4.85145 13.6907 4.191 13.9649 3.50211 13.9656ZM3.50211 9.66997C3.16696 9.66997 2.83934 9.76942 2.56067 9.95574C2.28201 10.1421 2.06481 10.4069 1.93656 10.7167C1.8083 11.0266 1.77474 11.3675 1.84013 11.6964C1.90551 12.0254 2.0669 12.3275 2.30389 12.5646C2.54087 12.8018 2.84281 12.9633 3.17152 13.0287C3.50023 13.0941 3.84095 13.0605 4.15059 12.9322C4.46022 12.8039 4.72488 12.5865 4.91108 12.3077C5.09728 12.0288 5.19666 11.701 5.19666 11.3656C5.19614 10.9161 5.01744 10.4851 4.69976 10.1672C4.38208 9.84931 3.95137 9.6705 3.50211 9.66997Z"/>
+                <path d="M9.03766 4.25003C9.15669 4.25052 9.27463 4.22326 9.38465 4.16983C9.49467 4.11639 9.59459 4.03785 9.67863 3.93874C9.76267 3.83963 9.82917 3.72192 9.87427 3.59241C9.91938 3.46289 9.9422 3.32416 9.94141 3.18421C9.94273 3.04497 9.92042 2.90681 9.87579 2.77783C9.83116 2.64884 9.7651 2.53161 9.68147 2.43299C9.59785 2.33437 9.49834 2.25634 9.38877 2.20346C9.27919 2.15058 9.16175 2.12392 9.0433 2.12503C8.92462 2.1246 8.80703 2.15165 8.69724 2.20464C8.58745 2.25763 8.48761 2.33553 8.40342 2.43388C8.31924 2.53224 8.25236 2.64912 8.2066 2.77786C8.16084 2.90661 8.13709 3.04468 8.13672 3.18421C8.13635 3.32374 8.15936 3.46199 8.20444 3.59107C8.24951 3.72014 8.31577 3.83752 8.39943 3.93649C8.48309 4.03546 8.58251 4.11409 8.69202 4.16788C8.80153 4.22168 8.91897 4.2496 9.03766 4.25003Z"/>
+                <path d="M10.3805 6.37507H9.14463C9.12435 6.37508 9.10445 6.36867 9.08701 6.35652C9.06957 6.34437 9.05523 6.32692 9.04549 6.30601L8.14908 4.37459C8.08592 4.23105 7.9949 4.10702 7.88339 4.01253C7.77187 3.91804 7.643 3.85574 7.50721 3.83068C7.37141 3.80563 7.2325 3.81852 7.10173 3.8683C6.97096 3.91809 6.85199 4.00338 6.75447 4.11726L4.78145 6.45476C4.6157 6.65366 4.52161 6.92008 4.5188 7.19851C4.5188 7.77625 4.87465 7.98211 5.04128 8.09832C5.84619 8.64351 6.41302 9.04228 6.72397 9.26375C6.7405 9.27558 6.75417 9.2922 6.76366 9.31203C6.77316 9.33186 6.77816 9.35422 6.77819 9.37697V11.672C6.77819 11.9578 6.96516 12.2032 7.20832 12.2175C7.26938 12.221 7.33039 12.2098 7.38767 12.1848C7.44496 12.1597 7.49732 12.1212 7.5416 12.0717C7.58587 12.0222 7.62114 11.9626 7.64526 11.8965C7.66939 11.8305 7.68187 11.7594 7.68195 11.6876V8.83211C7.68199 8.74777 7.66495 8.66464 7.63225 8.58958C7.59954 8.51452 7.5521 8.4497 7.49386 8.40047L6.44889 7.51693C6.43577 7.5059 6.42481 7.49169 6.41676 7.47526C6.4087 7.45884 6.40373 7.44057 6.40218 7.4217C6.40063 7.40282 6.40253 7.38378 6.40776 7.36584C6.41299 7.34791 6.42143 7.33149 6.43251 7.31771L7.61869 5.83054C7.63085 5.81524 7.64592 5.80354 7.66266 5.79639C7.6794 5.78924 7.69734 5.78685 7.71502 5.78941C7.7327 5.79196 7.74962 5.7994 7.76439 5.81111C7.77916 5.82282 7.79136 5.83846 7.8 5.85677L8.41625 7.16431C8.45542 7.2472 8.51274 7.31625 8.58227 7.3643C8.6518 7.41235 8.731 7.43765 8.81165 7.43757H10.3932C10.4544 7.43766 10.515 7.42312 10.5713 7.39484C10.6276 7.36655 10.6784 7.32512 10.7207 7.27305C10.7629 7.22098 10.7958 7.15935 10.8172 7.09192C10.8385 7.02448 10.848 6.95264 10.8451 6.88076C10.8332 6.59488 10.6237 6.37507 10.3805 6.37507Z"/>
+                </svg>
+              </label>
+              <input class="fieldset-transport__cheсkbox" type="checkbox" name="bus" checked id="bus">
+              <label class="fieldset-transport__label" for="bus">
+                <svg class="fieldset-transport__label__img-bus" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.50145 10.8571C3.50145 10.5417 3.3957 10.2723 3.1842 10.0491C2.9727 9.82589 2.71749 9.71429 2.41857 9.71429C2.11965 9.71429 1.86444 9.82589 1.65294 10.0491C1.44144 10.2723 1.33569 10.5417 1.33569 10.8571C1.33569 11.1726 1.44144 11.442 1.65294 11.6652C1.86444 11.8884 2.11965 12 2.41857 12C2.71749 12 2.9727 11.8884 3.1842 11.6652C3.3957 11.442 3.50145 11.1726 3.50145 10.8571ZM12.1645 10.8571C12.1645 10.5417 12.0588 10.2723 11.8473 10.0491C11.6358 9.82589 11.3806 9.71429 11.0816 9.71429C10.7827 9.71429 10.5275 9.82589 10.316 10.0491C10.1045 10.2723 9.99875 10.5417 9.99875 10.8571C9.99875 11.1726 10.1045 11.442 10.316 11.6652C10.5275 11.8884 10.7827 12 11.0816 12C11.3806 12 11.6358 11.8884 11.8473 11.6652C12.0588 11.442 12.1645 11.1726 12.1645 10.8571ZM11.7754 7.32143L11.1662 3.89286C11.138 3.75595 11.0746 3.64435 10.9759 3.55804C10.8772 3.47173 10.763 3.42857 10.6333 3.42857H2.86695C2.73723 3.42857 2.62302 3.47173 2.52432 3.55804C2.42562 3.64435 2.36217 3.75595 2.33397 3.89286L1.72485 7.32143C1.69665 7.5 1.73613 7.65774 1.84329 7.79464C1.95045 7.93155 2.08863 8 2.25783 8H11.2424C11.4116 8 11.5498 7.93155 11.6569 7.79464C11.7641 7.65774 11.8036 7.5 11.7754 7.32143ZM9.86339 1.85714C9.86339 1.7381 9.82391 1.6369 9.74495 1.55357C9.66599 1.47024 9.57011 1.42857 9.45731 1.42857H4.0429C3.9301 1.42857 3.83422 1.47024 3.75526 1.55357C3.6763 1.6369 3.63682 1.7381 3.63682 1.85714C3.63682 1.97619 3.6763 2.07738 3.75526 2.16071C3.83422 2.24405 3.9301 2.28571 4.0429 2.28571H9.45731C9.57011 2.28571 9.66599 2.24405 9.74495 2.16071C9.82391 2.07738 9.86339 1.97619 9.86339 1.85714ZM13.2474 8.33036V13.7143H12.1645V14.8571C12.1645 15.1726 12.0588 15.442 11.8473 15.6652C11.6358 15.8884 11.3806 16 11.0816 16C10.7827 16 10.5275 15.8884 10.316 15.6652C10.1045 15.442 9.99875 15.1726 9.99875 14.8571V13.7143H3.50145V14.8571C3.50145 15.1726 3.3957 15.442 3.1842 15.6652C2.9727 15.8884 2.71749 16 2.41857 16C2.11965 16 1.86444 15.8884 1.65294 15.6652C1.44144 15.442 1.33569 15.1726 1.33569 14.8571V13.7143H0.252808V8.33036C0.252808 7.66369 0.323308 7 0.464308 6.33929L1.33569 2.28571C1.38645 1.82143 1.6614 1.41369 2.16054 1.0625C2.65968 0.71131 3.30828 0.446429 4.10635 0.267857C4.90441 0.0892857 5.78566 0 6.7501 0C7.71454 0 8.5958 0.0892857 9.39386 0.267857C10.1919 0.446429 10.8405 0.71131 11.3397 1.0625C11.8388 1.41369 12.1138 1.82143 12.1645 2.28571L13.0528 6.33929C13.1825 6.94643 13.2474 7.61012 13.2474 8.33036Z"/>
+                </svg>
+              </label>
+              <input class="fieldset-transport__cheсkbox" type="checkbox" name="plane" checked id="plane">
+              <label class="fieldset-transport__label" for="plane">
+                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5955 0.801848C11.1025 0.93453 10.6072 1.06784 10.4197 1.41701L8.96437 4.48876L1.30839 6.54938L0.988368 7.52886L6.82394 8.04362L5.80374 10.6995L3.58193 11.2975L3.01427 12.3437L4.61059 12.5087L4.78353 13.3555C4.86188 13.6554 5.14628 13.8524 5.39161 13.7864L6.13221 13.5871L6.97106 15.148L7.53872 14.1019L7.01989 11.5615L8.64818 9.33652L11.6454 15.0819L12.2709 14.319L10.4837 5.56782L12.2445 2.71256C12.4343 2.36276 12.3192 1.79911 12.2035 1.23282C12.1462 0.952315 11.8408 0.735819 11.5955 0.801848Z"/>
+                </svg>
+              </label>
+          </fieldset>
+        </div>
+      </section>
+      <section class="account-plans">
+        <div class="account-plans__wrapper">
+          <h2 class="account-plans__title">Мои планы:</h2>
+          <div class="account-plans__element">
+            <div class="account-plans__element__left-side">
+              <div class="account-plans__element__number">1.</div>
+              <div class="account-plans__element__country">Франция, Италия</div>
+            </div>
+            <div class="account-plans__element__right-side">
+              <div class="account-plans__element__traveler">3 попутчика</div>
+              <div class="account-plans__element__date">26 мар — 29 мар</div>
+            </div>
+            <button class="account-plans__element__button">изменить</button>
+          </div>
+          <div class="account-plans__element">
+            <div class="account-plans__element__left-side">
+              <div class="account-plans__element__number">2.</div>
+              <div class="account-plans__element__country">Таиланд, Индонезия</div>
+            </div>
+            <div class="account-plans__element__right-side">
+              <div class="account-plans__element__traveler">1 попутчик</div>
+              <div class="account-plans__element__date">1 июл — 15 июл</div>
+            </div>
+            <button class="account-plans__element__button">изменить</button>
+          </div>
+        </div>
+      </section>
+      <section class="account-plans-append">
+        <div class="account-plans-append__wrapper">
+          <div class="account-plans-append__head">
+            <h2 class="account-plans-append__title">Добавить план:</h2>
+            <div class="account-plans-append__toggle plans-toggle">
+              <button onclick="showButtonDate()"  aria-label="Даты" class="account-plans-append__toggle__button account-plans-append__toggle__button--active plans-toggle__date" id="buttonDate"></button>
+              <button onclick="showButtonRoute()" aria-label="Маршрут" class="account-plans-append__toggle__button account-plans-append__toggle__button--nonactive plans-toggle__route" id="buttonRoute"></button>
+              <button onclick="showButtonFun()" aria-label="Развлечения" class="account-plans-append__toggle__button account-plans-append__toggle__button--nonactive plans-toggle__fun" id="buttonFun"></button>
+            </div>
+            <script>
+                function showButtonDate(){
+                  document.getElementById("step-two").classList.add('step--close');
+                  document.getElementById("step-three").classList.add('step--close');
+                  document.getElementById("step-one").classList.remove('step--close');
+                  document.getElementById("buttonDate").classList.add('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonDate").classList.remove('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonRoute").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonRoute").classList.remove('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonFun").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonFun").classList.remove('account-plans-append__toggle__button--active');
+                }
+                function showButtonRoute(){
+                  document.getElementById("step-one").classList.add('step--close');
+                  document.getElementById("step-three").classList.add('step--close');
+                  document.getElementById("step-two").classList.remove('step--close');
+                  document.getElementById("buttonDate").classList.remove('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonDate").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonRoute").classList.add('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonRoute").classList.remove('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonFun").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonFun").classList.remove('account-plans-append__toggle__button--active');
+                }
+                function showButtonFun(){
+                  document.getElementById("step-one").classList.add('step--close');
+                  document.getElementById("step-two").classList.add('step--close');
+                  document.getElementById("step-three").classList.remove('step--close');
+                  document.getElementById("buttonDate").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonDate").classList.remove('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonRoute").classList.add('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonRoute").classList.remove('account-plans-append__toggle__button--active');
+                  document.getElementById("buttonFun").classList.remove('account-plans-append__toggle__button--nonactive');
+                  document.getElementById("buttonFun").classList.add('account-plans-append__toggle__button--active');
+                }
+            </script>
+          </div>
+          <form class="account-plans-append__form form-plans">
+            <div class="form-plans__step-one-container step-one" id="step-one">
+              <div class="step-one__head">
+                <h3 class="step-one__head__title">Шаг 1. <br>Даты пребывания</h3>
+                <p class="step-one__head__text">
+                  Укажите предпочтительное количество попутчиков,
+                  которых вы хотели бы позвать в поездку,
+                  и ее предполагаемую длительность.
+                </p>
+              </div>
+              <div class="step-one__input-container">
+                <div class="step-one__input-container__element">
+                  <p class="step-one__input-container__element__find">ищу попутчиков:</p>
+                  <div class="step-one__input-container__element__count">
+                    <input class="step-one__input-container__element__input" type="text" name="input_find" placeholder="2">
+                    <button class="step-one__input-container__element__count__button-minus">
+                    </button>
+                    <button class="step-one__input-container__element__count__button-plus">
+                    </button>
+                  </div>
+                </div>
+                <div class="step-one__input-container__element">
+                  <p class="step-one__input-container__element__duration">длительность:</p>
+                  <div class="step-one__input-container__element__count">
+                    <input class="step-one__input-container__element__input" type="text" name="input_duration" placeholder="2">
+                    <button class="step-one__input-container__element__count__button-minus">
+                    </button>
+                    <button class="step-one__input-container__element__count__button-plus">
+                    </button>
+                  </div>
+                </div>
+                <div class="step-one__input-container__element">
+                  <div class="step-one__input-container__element__checkbox-container">
+                    <input class="step-one__input-container__element__checkbox" type="checkbox" name="step-one__checkbox" id="step-one__checkbox">
+                    <label class="step-one__input-container__element__label" for="step-one__checkbox"></label>
+                    <p class="step-one__input-container__element__checkbox-text">Можно с детьми</p>
+                  </div>
+                </div>
+              </div>
+              <div class="step-one__calendar calendar">
+                <div class="calendar__month">
+                  <button class="calendar__month__button-left"><img alt="стрелка влево" src="img/arrow-left.svg" width="9" height="18"></button>
+                  <p class="calendar__month__name">Март 2019</p>
+                  <button class="calendar__month__button-right"><img alt="стрелка вправо" src="img/arrow-right.svg" width="9" height="18"></button>
+                </div>
+                <div class="calendar__days">
+                  <div class="calendar__days__head">
+                    <p class="calendar__days__head__text">П<span class="calendar__days__head--hidden">н</span></p>
+                    <p class="calendar__days__head__text">В<span class="calendar__days__head--hidden">т</span></p>
+                    <p class="calendar__days__head__text">С<span class="calendar__days__head--hidden">р</span></p>
+                    <p class="calendar__days__head__text">Ч<span class="calendar__days__head--hidden">т</span></p>
+                    <p class="calendar__days__head__text">П<span class="calendar__days__head--hidden">т</span></p>
+                    <p class="calendar__days__head__text calendar__days__head__text--weekend">С<span class="calendar__days__head--hidden">б</span></p>
+                    <p class="calendar__days__head__text calendar__days__head__text--weekend">В<span class="calendar__days__head--hidden">с</span></p>
+                  </div>
+                  <div class="calendar__days__date date">
+                    <button class="date__elements date__elements--disable">23</button>
+                    <button class="date__elements date__elements--disable">24</button>
+                    <button class="date__elements date__elements--disable">25</button>
+                    <button class="date__elements date__elements--disable">26</button>
+                    <button class="date__elements date__elements--disable">27</button>
+                    <button class="date__elements date__elements--disable">28</button>
+                    <button class="date__elements date__elements--disable">1</button>
+                    <button class="date__elements date__elements--disable">2</button>
+                    <button class="date__elements date__elements--disable">3</button>
+                    <button class="date__elements date__elements--disable">4</button>
+                    <button class="date__elements date__elements--disable">5</button>
+                    <button class="date__elements date__elements--disable">6</button>
+                    <button class="date__elements date__elements--disable">7</button>
+                    <button class="date__elements date__elements--disable">8</button>
+                    <button class="date__elements date__elements--disable">9</button>
+                    <button class="date__elements date__elements--disable">10</button>
+                    <button class="date__elements date__elements--disable">11</button>
+                    <button class="date__elements date__elements--disable">12</button>
+                    <button class="date__elements date__elements--disable">13</button>
+                    <button class="date__elements date__elements--disable">14</button>
+                    <button class="date__elements date__elements--disable">15</button>
+                    <button class="date__elements date__elements--disable">16</button>
+                    <button class="date__elements date__elements--disable">17</button>
+                    <button class="date__elements date__elements--disable">18</button>
+                    <button class="date__elements date__elements--disable">19</button>
+                    <button class="date__elements date__elements--disable">20</button>
+                    <button class="date__elements date__elements--disable">21</button>
+                    <button class="date__elements date__elements--disable">22</button>
+                    <button class="date__elements date__elements--disable">23</button>
+                    <button class="date__elements date__elements--disable">24</button>
+                    <button class="date__elements date__elements--disable">25</button>
+                    <button class="date__elements date__elements--selected date__elements--selected-hover date__elements--begin">26</button>
+                    <button class="date__elements date__elements--selected">27</button>
+                    <button class="date__elements date__elements--selected date__elements--end">28</button>
+                    <button class="date__elements date__elements--active">29</button>
+                    <button class="date__elements date__elements--active">30</button>
+                    <button class="date__elements date__elements--active">31</button>
+                    <button class="date__elements date__elements--active date__elements--start-month">1</button>
+                    <button class="date__elements date__elements--active">2</button>
+                    <button class="date__elements date__elements--active">3</button>
+                    <button class="date__elements date__elements--active">4</button>
+                    <button class="date__elements date__elements--active">5</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-plans__button-container">
+                <button onclick="showButtonRoute()" class="form-plans__button-next">Следующий шаг</button>
+              </div>
+            </div>
+            <div class="form-plans__step-one-container step-two step--close" id="step-two">
+              <div class="step-two__head">
+                <h3 class="step-two__head__title">Шаг 2. <br>Маршрут</h3>
+                <p class="step-two__head__text">
+                  Укажите страны, которые вы хотели бы посетить.
+                  Это может быть одна или сразу несколько.
+                </p>
+              </div>
+              <div class="step-two__country-list country-list">
+                <div class="country-list__element country-list__element--active">
+                  <div class="country-list__element__left-side country-list__element--country">
+                    <p>Босния и герцеговина</p>
+                  </div>
+                  <div class="country-list__element__right-side country-list__element--flag">
+                    <img alt="Флаг Босния и Герцеговина" src="img/bosnia-and-herzegovina.svg" width="35" height="24">
+                  </div>
+                </div>
+                <div class="country-list__element country-list__element--active">
+                  <div class="country-list__element__left-side country-list__element--country">
+                    <p>Чехия</p>
+                  </div>
+                  <div class="country-list__element__right-side country-list__element--flag">
+                    <img alt="Флаг Чехия" src="img/czech-flag-mobile.svg" width="35" height="24">
+                  </div>
+                </div>
+                <div class="country-list__element country-list__element--active">
+                  <div class="country-list__element__chousen-country chousen-country">
+                      <div class="chousen-country__list">
+                        <button class="chousen-country__list__element chousen-country__list__element--active">А</button>
+                        <button class="chousen-country__list__element">Б</button>
+                        <button class="chousen-country__list__element">В</button>
+                        <button class="chousen-country__list__element">Г</button>
+                        <button class="chousen-country__list__element">Д</button>
+                        <button class="chousen-country__list__element">Е</button>
+                        <button class="chousen-country__list__element">З</button>
+                        <button class="chousen-country__list__element">И</button>
+                        <button class="chousen-country__list__element">К</button>
+                        <button class="chousen-country__list__element">Л</button>
+                        <button class="chousen-country__list__element">М</button>
+                        <button class="chousen-country__list__element">Н</button>
+                        <button class="chousen-country__list__element">О</button>
+                        <button class="chousen-country__list__element">П</button>
+                        <button class="chousen-country__list__element">Р</button>
+                        <button class="chousen-country__list__element">С</button>
+                        <button class="chousen-country__list__element">Т</button>
+                        <button class="chousen-country__list__element">У</button>
+                        <button class="chousen-country__list__element">Ф</button>
+                        <button class="chousen-country__list__element">Х</button>
+                        <button class="chousen-country__list__element">Ч</button>
+                        <button class="chousen-country__list__element">Ш</button>
+                        <button class="chousen-country__list__element">Э</button>
+                        <button class="chousen-country__list__element">Ю</button>
+                        <button class="chousen-country__list__element">Я</button>
+                      </div>
+                      <ul class="chousen-country__element">
+                        <li><a class="chousen-country__element__link">Австралия</a></li>
+                        <li><a class="chousen-country__element__link">Австрия</a></li>
+                        <li><a class="chousen-country__element__link">Азербайджан</a></li>
+                        <li><a class="chousen-country__element__link">Албания</a></li>
+                        <li><a class="chousen-country__element__link">Алжир</a></li>
+                        <li><a class="chousen-country__element__link">Ангола</a></li>
+                        <li><a class="chousen-country__element__link">Андорра</a></li>
+                        <li><a class="chousen-country__element__link">Антигуа и Барбуда</a></li>
+                        <li><a class="chousen-country__element__link">Аргентина</a></li>
+                        <li><a class="chousen-country__element__link">Армения</a></li>
+                        <li><a class="chousen-country__element__link">Афганистан</a></li>
+                      </ul>
+                  </div>
+                  <div class="country-list__element__left-side country-list__element--choiсe">
+                    <p>выберите страну</p>
+                    <img alt="закрыть" src="img/white-cross.svg" width="11" height="11">
+                  </div>
+                  <div class="country-list__element__right-side country-list__element__right-side--empty">
+                  </div>
+                </div>
+                <div class="country-list__element  country-list__element--inactive">
+                  <div class="country-list__element__left-side country-list__element--append"><p>Добавить страну</p>
+                  </div>
+                  <div class="country-list__element__right-side country-list__element__right-side--append"></div>
+                </div>
+              </div>
+              <div class="form-plans__button-container">
+                <button  onclick="showButtonFun()" class="form-plans__button-next">Следующий шаг</button>
+                <button  onclick="showButtonDate()" class="form-plans__button-back">На шаг назад</button>
+              </div>
+            </div>
+            <div class="form-plans__step-three-container step-three step--close" id="step-three">
+              <div class="step-three__head">
+                <h3 class="step-three__head__title">Шаг 3. <br>Развлечения</h3>
+                <p class="step-three__head__text">
+                  Наконец, расскажите о своих планах времяпровождения.
+                  Можно писать в свободной форме и ставить тэги.
+                </p>
+              </div>
+              <div class="step-three__fun-list fun-list">
+                <div class="fun-list__element">
+                  <div class="fun-list__element__head">
+                    <div class="fun-list__element__head__country-name country-name--fade">Босния и Герцеговина</div>
+                    <div class="fun-list__element__head__country-flag"><img alt="Флаг Босния и Герцеговина" src="img/bosnia-and-herzegovina.svg" width="35" height="24"></div>
+                  </div>
+                  <div>
+                    <textarea class="fun-list__element__textarea  textarea-empty" placeholder="План действий"></textarea>
+                  </div>
+                </div>
+                <div class="fun-list__element">
+                  <div class="fun-list__element__head">
+                    <div class="fun-list__element__head__country-name">Чехия</div>
+                    <div class="fun-list__element__head__country-flag"><img alt="Флаг Чехия" src="img/czech-flag-mobile.svg" width="35" height="24"></div>
+                  </div>
+                  <div>
+                    <textarea class="fun-list__element__textarea textarea-notempty">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-plans__button-container">
+                <button class="form-plans__button-send">Отправить</button>
+                <button onclick="showButtonRoute()" class="form-plans__button-back">На шаг назад</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="main-footer__wrapper">
+        <div class="main-footer__img"></div>
+        <div class="main-footer__list social-list">
+          <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
+          <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
+          <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+        </div>
+        <div class="main-footer__developer-container developer">
+          <p class="developer__text">Разработано</p>
+          <img alt="Разработчик" class="developer__img" src="img/html-academy.svg">
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

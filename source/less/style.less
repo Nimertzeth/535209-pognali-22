@@ -82,6 +82,9 @@ input {outline:none;}
     background: #161C35;
   }
 }
+.main-header-catalog{
+  background: #192144;
+}
 .main-header__logo{
   position:relative;
   z-index: 1111111;
@@ -161,9 +164,6 @@ input {outline:none;}
   @media screen and (max-width: 767px){
     top:2px;
   }
-}
-.main-header-catalog{
-  background: #192144;
 }
 .main-menu{
   position:relative;
@@ -5512,12 +5512,16 @@ input {outline:none;}
   position:absolute;
   z-index: 99999;
   width: 100%;
-  height: 55px;
+  height: 25px;
   top:0px;
   background: #D4D9EB;
   border-radius:30px 30px 0 0;
+  @media screen and (min-width: 768px){
+    height: 35px;
+  }
   @media screen and (min-width: 1440px){
     border-radius:50px 50px 0 0;
+    height: 55px;
   }
 }
 .account-plans-append__wrapper{
@@ -7147,17 +7151,18 @@ input {outline:none;}
 .chousen-country__list__element:hover{
   border-right:1px solid rgba(149, 155, 178, 1);
   border-bottom:1px solid rgba(149, 155, 178, 1);
-  box-shadow: -0.5px 0.5px 0px 0.5px rgba(149, 155, 178, 1),
-    0.25px 0.5px 0px 0.5px rgba(149, 155, 178, 1) inset;
+  box-shadow: -0.5px -0.1px 0px 0.5px rgba(149, 155, 178, 1),
+    0px 0px 0px 0.5px rgba(149, 155, 178, 1) inset;
   @media screen and (min-width: 1440px){
     border:1px solid rgba(149, 155, 178, 1);
+    box-shadow:none;
   }
 }
 .chousen-country__list__element:active{
   border-right:1px solid rgba(29, 46, 91, 1);
   border-bottom:1px solid rgba(29, 46, 91, 1);
-  box-shadow: -0.5px 0.5px 0px 0.5px rgba(29, 46, 91, 1),
-  0.25px 0.5px 0px 0.5px rgba(29, 46, 91, 1) inset;
+  box-shadow: -0.5px 0px 0px 0.5px rgba(29, 46, 91, 1),
+    0px 0px 0px 0.5px rgba(29, 46, 91, 1) inset;
   background:rgba(29, 46, 91, 1);
   color: white;
   @media screen and (min-width: 1440px){
@@ -7167,8 +7172,16 @@ input {outline:none;}
 .chousen-country__list__element--active{
   background:#EDEFF6;
   @media screen and (min-width: 768px){
-      background:rgba(29, 46, 91, 1);
-      color: white;
+    background:rgba(29, 46, 91, 1);
+    color: white;
+    border-right:1px solid rgba(29, 46, 91, 1);
+    border-bottom:1px solid rgba(29, 46, 91, 1);
+    box-shadow: -0.5px -0.4px 0px 0.5px rgba(29, 46, 91, 1),
+    0px 0px 0px 0.5px rgba(29, 46, 91, 1) inset;
+  }
+  @media screen and (min-width: 1440px){
+    border:1px solid rgba(29, 46, 91, 1);
+    background:rgba(29, 46, 91, 1);
   }
 }
 .chousen-country__element{

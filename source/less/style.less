@@ -128,13 +128,13 @@ input {outline:none;}
   margin-right:26px;
   border:none;
   width: 25px;
-  height: 3px;
-  box-shadow: 0 7px 0 white;
-  border-radius: 1.5px;
+  height: 25px;
+  background:url(../img/button-menu-open.svg) no-repeat;
+  background-size:contain;
   margin-top: 4px;
   @media screen and (min-width: 600px){
     margin-right: 0;
-    margin-top: -5px;
+    margin-top: 12px;
   }
   @media screen and (min-width: 1024px) and (max-width: 1439px){
       display: none;
@@ -158,8 +158,8 @@ input {outline:none;}
   }
 }
 .main-nav__toggle--scroll{
-  background:rgba(204, 204, 204, 1);
-  box-shadow: 0 7px 0 rgba(204, 204, 204, 1);
+  background:url(../img/button-menu-open-scroll.svg) no-repeat;
+  background-size:contain;
   position:relative;
   @media screen and (max-width: 767px){
     top:2px;
@@ -309,7 +309,7 @@ input {outline:none;}
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #161C35;
+    color: rgba(22, 28, 53, 1);
     padding-left: 40px;
     padding-right: 40px;
     text-decoration: none;
@@ -322,6 +322,12 @@ input {outline:none;}
   @media screen and (min-width: 600px) and (max-width: 1439px){
     margin-right: 40px;
   }
+}
+.user-list-desktop__login:hover{
+  background:#FFBD30;
+}
+.user-list-desktop__login:active{
+  color: rgba(22, 28, 53, 0.3);
 }
 .user-list-desktop__login--tablet{
   display: none;
@@ -345,19 +351,7 @@ input {outline:none;}
     margin-right: 40px;
   }
 }
-.user-list-desktop__login p{
-  display: inline-block;
-}
-.user-list-desktop__login:hover{
-  background:#FFBD30;
-}
-.user-list-desktop__login p{
-  margin: 0;
-  padding:0;
-}
-.user-list-desktop__login:active p{
-  opacity: 0.3;
-}
+
 .site-list{
   cursor: pointer;
   display: flex;
@@ -2508,7 +2502,6 @@ input {outline:none;}
   height: 62px;
   border-radius: 10px;
   margin-left: -10px;
-  //background:url(../img/button-after.png) no-repeat center center;
   background-color: #FFD74B;
   @media screen and (min-width: 768px){
     border-radius:0 20px 20px 0;
@@ -2525,7 +2518,6 @@ input {outline:none;}
     margin: 0;
     border-radius: 10px;
     margin-left: -10px;
-    //background:url(../img/button-after.png) no-repeat 90% 50%;
     background-color: #FFD74B;
     border-radius:0 20px 20px 0;
     width: 330px;
@@ -2537,7 +2529,7 @@ input {outline:none;}
     padding-left:36px;
   }
 }
-.interest__form-button p{
+.interest__form-button span{
   @media screen and (max-width: 1439px){
     display: none;
   }
@@ -2707,7 +2699,6 @@ input {outline:none;}
   align-items:center;
 }
 .address__image{
-  cursor: pointer;
   width: 45px;
   height: 45px;
   background: #121936;
@@ -3588,7 +3579,7 @@ input {outline:none;}
   border-radius: 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #192144;
+  color: rgba(25, 33, 68, 1);
   width: 100%;
   height:40px;
   position:relative;
@@ -3606,14 +3597,11 @@ input {outline:none;}
    margin-bottom: 60px;
     }
 }
-.bottom-part__button-close p{
-  margin:0;
-}
 .bottom-part__button-close:hover{
   background: #C8CEE8;
 }
-.bottom-part__button-close:active p{
-  opacity: 0.5;
+.bottom-part__button-close:active{
+  opacity: rgba(25, 33, 68, 0.5);
 }
 .bottom-part__button-close:active:before{
   opacity: 0.5;
@@ -3916,7 +3904,7 @@ input {outline:none;}
 }
 .fieldset-transport__list{
   position:relative;
-  z-index: 99999999;
+  z-index: 9;
   display: flex;
   flex-direction: row;
   gap:0 1px;
@@ -4770,14 +4758,14 @@ input {outline:none;}
   border:none;
   order: 7;
   margin-top: 13px;
-  background: #FFD74B;
+  color: rgba(22, 28, 53, 1);
   border-radius: 25px;
   font-family: bloggersans-bold;
   font-size: 17px;
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #161C35;
+  background: rgba(255, 215, 75, 1);
   margin-left:20px;
   margin-right: 20px;
   @media screen and (min-width: 320px)and (max-width: 767px){
@@ -4801,14 +4789,11 @@ input {outline:none;}
     grid-column-end:2;
   }
 }
-.traveler__card-button p{
-  margin: 0;
-}
 .traveler__card-button:hover{
   background:#FFBD30;
 }
-.traveler__card-button:active p{
-  opacity: 0.5;
+.traveler__card-button:active{
+  color: rgba(22, 28, 53, 0.5);
 }
 .selection__traveler__show-more{
   cursor: pointer;
@@ -7509,19 +7494,25 @@ input {outline:none;}
   position: relative;
 }
 .site-list__item a:after{
-  content: attr(data-hover);
-  position: absolute;
-  top:90%;
-  left: 0;
-  font-family: "bloggersans-bold";
-  white-space: nowrap;
+  @media screen and (min-width: 1024px){
+    content: attr(data-hover);
+    position: absolute;
+    top:90%;
+    left: 0;
+    font-family: "bloggersans-bold";
+    white-space: nowrap;
+  }
 }
 .site-list__item:hover a{
+  @media screen and (min-width: 1024px){
     display: block;
     transition: transform 0.7s;
     transform: translate3d(0,-18px,0);
+  }
 }
 .site-list__item:hover a:after{
-  transition: transform 0.3s;
-  transform: translate3d(0,0,0);
+  @media screen and (min-width: 1024px){
+    transition: transform 0.3s;
+    transform: translate3d(0,0,0);
+  }
 }

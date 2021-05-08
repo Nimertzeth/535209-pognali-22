@@ -44,21 +44,25 @@
       }
       </script>
       <div class="main-menu">
-        <a href="index.html" id="main-logo" class="main-header__logo main-header__logo--open">
-          <img alt="Лого" class="main-header__logo--320" src="img/logo.svg" width="96" height="15">
-          <img alt="Лого" class="main-header__logo--768" src="img/logo-768.svg" width="166" height="42">
-          <img alt="Лого" class="main-header__logo--1440" src="img/logo-768.svg" width="200" height="52">
+        <a id="main-logo" class="main-header__logo main-header__logo--open">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-1440.svg">
+            <source media="(min-width: 600px)" srcset="img/logo-768.svg">
+            <img alt="Лого" src="img/logo.svg">
+          </picture>
         </a>
         <a id="second-logo" class="main-header__logo main-header__logo--scroll main-header__logo--open close">
-          <img alt="Лого" class="main-header__logo--320" src="img/second-logo.svg" width="96" height="15">
-          <img alt="Лого" class="main-header__logo--768" src="img/second-logo-768.svg" width="166" height="42">
-          <img alt="Лого" class="main-header__logo--1440" src="img/logo-1440.png" width="200" height="52">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/second-logo-1440.svg">
+            <source media="(min-width: 600px)" srcset="img/second-logo-768.svg">
+            <img alt="Лого" src="img/second-logo.svg">
+          </picture>
         </a>
         <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
         <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
         <a class="user-list-desktop__login--tablet" href="login.html">
-              Авторизация
-            </a>
+          Авторизация
+        </a>
          <script>
             function showMenu(){
                 document.getElementById("main-logo").classList.add('close');

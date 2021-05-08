@@ -45,14 +45,18 @@
       </script>
       <div class="main-menu">
         <a href="index.html" id="main-logo" class="main-header__logo main-header__logo--open">
-          <img alt="Лого" class="main-header__logo--320" src="img/logo.svg" width="96" height="15">
-          <img alt="Лого" class="main-header__logo--768" src="img/logo-768.svg" width="166" height="42">
-          <img alt="Лого" class="main-header__logo--1440" src="img/logo-768.svg" width="200" height="52">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-1440.svg">
+            <source media="(min-width: 600px)" srcset="img/logo-768.svg">
+            <img alt="Лого" src="img/logo.svg">
+          </picture>
         </a>
         <a id="second-logo" class="main-header__logo main-header__logo--scroll main-header__logo--open close">
-          <img alt="Лого" class="main-header__logo--320" src="img/second-logo.svg" width="96" height="15">
-          <img alt="Лого" class="main-header__logo--768" src="img/second-logo-768.svg" width="166" height="42">
-          <img alt="Лого" class="main-header__logo--1440" src="img/logo-1440.png" width="200" height="52">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/second-logo-1440.svg">
+            <source media="(min-width: 600px)" srcset="img/second-logo-768.svg">
+            <img alt="Лого" src="img/second-logo.svg">
+          </picture>
         </a>
         <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
         <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
@@ -638,9 +642,11 @@
                   <h2 class="traveler__card-name__title">Таня Фирсова<span class="traveler__card-name--inactive"></span></h2>
                 </div>
                 <div class="traveler__card-photo">
-                  <img alt="Фирсова" class="traveler__card-photo__img" src="img/firsova-mobile.png" width="70" height="70">
-                  <img alt="Фирсова" class="traveler__card-photo__img--tab" src="img/firsova-tab.png" width="190" height="190">
-                  <img alt="Фирсова" class="traveler__card-photo__img--desktop" src="img/firsova-desktop.png" width="285" height="285">
+                  <picture>
+                    <source media="(min-width: 1440px)" srcset="img/firsova-desktop.jpg, img/firsova-desktop@2x.jpg 2x">
+                    <source media="(min-width: 600px)" srcset="img/firsova-tab.jpg, img/firsova-tab@2x.jpg 2x">
+                    <img alt="Фирсова" class="traveler__card-photo__img" src="img/firsova-mobile.jpg" srcset="img/firsova-mobile@2x.jpg 2x">
+                  </picture>
                 </div>
                 <div class="traveler__card-like">
                     <button class="traveler__card-photo__like__button traveler__card-photo__like__button--active">
@@ -693,8 +699,10 @@
                   <p class="traveler__card-level__text">
                   левел:
                   </p>
-                  <img alt="Уровень 99" class="traveler__card-level__img-mobile" src="img/mark_level_99.svg">
-                  <img alt="Уровень 99" class="traveler__card-level__img-tab" src="img/mark_level_99_tab.svg">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/mark_level_99_tab.svg">
+                    <img alt="Уровень 99" src="img/mark_level_99.svg">
+                  </picture>
                 </div>
                 <button class="traveler__card-button">Позвать!</button>
               </div>
@@ -703,9 +711,11 @@
                   <h2 class="traveler__card-name__title">Петя Демин<span class="traveler__card-name--inactive"></span></h2>
                 </div>
                 <div class="traveler__card-photo">
-                  <img alt="Демин" class="traveler__card-photo__img" src="img/demin-mobile.png" width="70" height="70">
-                  <img alt="Демин" class="traveler__card-photo__img--tab" src="img/demin-tab.png" width="190" height="190">
-                  <img alt="Демин" class="traveler__card-photo__img--desktop" src="img/demin-desktop.png" width="285" height="285">
+                  <picture>
+                    <source media="(min-width: 1440px)" srcset="img/demin-desktop.jpg, img/demin-desktop@2x.jpg 2x">
+                    <source media="(min-width: 600px)" srcset="img/demin-tab.jpg, img/demin-tab@2x.jpg 2x">
+                    <img alt="Демин" class="traveler__card-photo__img" src="img/demin-mobile.jpg" srcset="img/demin-mobile@2x.jpg 2x">
+                  </picture>
                 </div>
                 <div class="traveler__card-like">
                     <button class="traveler__card-photo__like__button">
@@ -753,8 +763,10 @@
                   <p class="traveler__card-level__text">
                   левел:
                   </p>
-                  <img alt="Уровень 80" class="traveler__card-level__img-mobile" src="img/mark_level_80.svg">
-                  <img alt="Уровень 80" class="traveler__card-level__img-tab" src="img/mark_level_80_tab.svg">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/mark_level_80_tab.svg">
+                    <img alt="Уровень 80" src="img/mark_level_80.svg">
+                  </picture>
                 </div>
                 <button class="traveler__card-button">Позвать!</button>
               </div>
@@ -763,9 +775,11 @@
                   <h2 class="traveler__card-name__title">Марк Смолов<span class="traveler__card-name--inactive"></span></h2>
                 </div>
                 <div class="traveler__card-photo">
-                  <img alt="Смолов" class="traveler__card-photo__img" src="img/smolov-mobile.png" width="70" height="70">
-                  <img alt="Смолов" class="traveler__card-photo__img--tab" src="img/smolov-tab.png" width="190" height="190">
-                  <img alt="Смолов" class="traveler__card-photo__img--desktop" src="img/smolov-desktop.png" width="285" height="285">
+                  <picture>
+                    <source media="(min-width: 1440px)" srcset="img/smolov-desktop.jpg, img/smolov-desktop@2x.jpg 2x">
+                    <source media="(min-width: 600px)" srcset="img/smolov-tab.jpg, img/smolov-tab@2x.jpg 2x">
+                    <img alt="Смолов" class="traveler__card-photo__img" src="img/smolov-mobile.jpg" srcset="img/smolov-mobile@2x.jpg 2x">
+                  </picture>
                 </div>
                 <div class="traveler__card-like">
                     <button class="traveler__card-photo__like__button">
@@ -818,8 +832,10 @@
                   <p class="traveler__card-level__text">
                   левел:
                   </p>
-                  <img alt="Уровень 25" class="traveler__card-level__img-mobile" src="img/mark_level_25.svg">
-                  <img alt="Уровень 25" class="traveler__card-level__img-tab" src="img/mark_level_25_tab.svg">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/mark_level_25_tab.svg">
+                    <img alt="Уровень 25" src="img/mark_level_25.svg">
+                  </picture>
                 </div>
                 <button class="traveler__card-button">Позвать!</button>
               </div>
@@ -828,9 +844,11 @@
                   <h2 class="traveler__card-name__title">Лариса Роговая<span class="traveler__card-name--active"></span></h2>
                 </div>
                 <div class="traveler__card-photo">
-                  <img alt="Роговая" class="traveler__card-photo__img" src="img/rogovaya-mobile.jpg" width="70" height="70">
-                  <img alt="Роговая" class="traveler__card-photo__img--tab" src="img/rogovaya-tab.jpg" width="190" height="190">
-                  <img alt="Роговая" class="traveler__card-photo__img--desktop" src="img/rogovaya-desktop.png" width="285" height="285">
+                  <picture>
+                    <source media="(min-width: 1440px)" srcset="img/rogovaya-desktop.jpg, img/rogovaya-desktop@2x.jpg 2x">
+                    <source media="(min-width: 600px)" srcset="img/rogovaya-tab.jpg, img/rogovaya-tab@2x.jpg 2x">
+                    <img alt="Роговая" class="traveler__card-photo__img" src="img/rogovaya-mobile.jpg" srcset="img/rogovaya-mobile@2x.jpg 2x">
+                  </picture>
                 </div>
                 <div class="traveler__card-like">
                     <button class="traveler__card-photo__like__button">
@@ -880,8 +898,10 @@
                   <p class="traveler__card-level__text">
                   левел:
                   </p>
-                  <img alt="Уровень 50" class="traveler__card-level__img-mobile" src="img/mark_level_50.svg">
-                  <img alt="Уровень 50" class="traveler__card-level__img-tab" src="img/mark_level_50_tab.svg">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/mark_level_50_tab.svg">
+                    <img alt="Уровень 50" src="img/mark_level_50.svg">
+                  </picture>
                 </div>
                 <button class="traveler__card-button">Позвать!</button>
               </div>

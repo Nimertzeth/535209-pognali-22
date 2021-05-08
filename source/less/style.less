@@ -93,33 +93,16 @@ input {outline:none;}
     margin-left:40px;
   }
   @media screen and (min-width: 1024px) and (max-width: 1439px){
-     margin-right: 100px;
-    }
+    margin-right: 100px;
+  }
+  @media screen and (min-width: 1440px){
+    margin-right: 150px;
+    margin-left:0;
+  }
 }
 .main-header__logo--scroll{
   @media screen and (max-width: 767px){
   top:4px;
-  }
-}
-.main-header__logo--320{
-  @media screen and (min-width: 600px){
-    display: none;
-  }
-}
-.main-header__logo--768{
-  display: none;
-  @media screen and (min-width: 600px){
-    display: block;
-  }
-  @media screen and (min-width: 1440px){
-    display: none;
-  }
-}
-.main-header__logo--1440{
-  display: none;
-  @media screen and (min-width: 1440px){
-    display: block;
-    margin-right: 145px;
   }
 }
 .main-nav__toggle{
@@ -639,10 +622,20 @@ input {outline:none;}
   position:relative;
   background: url(../img/globe-back-mobile.png) no-repeat;
   background-color: #161C35;
+  @media (min-resolution: 2dppx) {
+      background: url(../img/globe-back-mobile@2x.png)no-repeat;
+      background-size:320px 569px;
+      }
   @media screen and (min-width: 500px){
       background: url(../img/globe-back-tab.png)no-repeat;
       background-position: 0 63%;
       background-color: #182044;
+      @media (min-resolution: 2dppx) {
+        background: url(../img/globe-back-tab@2x.png)no-repeat;
+        background-size:768px 612px;
+        background-position: 0 63%;
+        background-color: #182044;
+      }
     }
   @media screen and (min-width: 768px){
       padding-top:0;
@@ -653,6 +646,10 @@ input {outline:none;}
       background-position: 0 0;
       background-color: #182044;
       padding-top:5px;
+      @media (min-resolution: 2dppx) {
+      background: url(../img/globe-back-desktop@2x.png)no-repeat;
+      background-size:1440px 750px;
+      }
     }
   @media screen and (min-width: 1440px){
       background: url(../img/globe-back-desktop.png)no-repeat;
@@ -660,8 +657,11 @@ input {outline:none;}
       background-color: #182044;
       background-size:cover;
       padding-top:5px;
+      @media (min-resolution: 2dppx) {
+      background: url(../img/globe-back-desktop@2x.png)no-repeat;
+      background-size:1440px 750px;
     }
-
+  }
 }
 .travel-wrapper{
   position:relative;
@@ -725,10 +725,10 @@ input {outline:none;}
 .travel__img{
   margin-top: 10px;
   margin-left: 80px;
-  @media screen and (min-width: 500px){
+  @media screen and (min-width: 500px) and (max-width: 767px){
     margin-left: 40%;
     }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) and (max-width: 1439px){
     margin-left: 0;
     min-width: 372px;
     height: 451px;
@@ -737,22 +737,12 @@ input {outline:none;}
     right: 70px;
   }
   @media screen and (min-width: 1024px) and (max-width: 1439px){
-    display: none;
-    }
-  @media screen and (min-width: 1440px){
-    display: none;
-
-  }
-}
-.travel__img--1440{
-  display: none;
-  @media screen and (min-width: 1024px) and (max-width: 1439px){
-    display: block;
     width: 315px;
     height: 500px;
-    }
+  }
   @media screen and (min-width: 1440px){
-    display: block;
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 .travel__text-container{
@@ -772,7 +762,6 @@ input {outline:none;}
    @media screen and (min-width: 1024px) and (max-width: 1439px){
     margin-right:65px;
     }
-
 }
 .travel__text-quote{
   font-family: bloggersans-light;
@@ -1164,13 +1153,19 @@ input {outline:none;}
   margin: 0;
   padding:0;
   margin-top: -21px;
-  background: url(../img/about-mobile.png)50% 0% no-repeat,
-  url(../img/about-mobile-back.png)top left no-repeat;
+  background: url(../img/service_320.png)50% 0% no-repeat,
+  url(../img/service_320-blue.png)top left no-repeat;
   background-color: #192144;
   border-radius: 0 0 30px 30px;
   position:relative;
   z-index: 99;
   padding-bottom:53px;
+  @media (min-resolution: 2dppx) {
+        background: url(../img/service_320@2x.png)50% 0% no-repeat,
+  url(../img/service_320-blue@2x.png)top left no-repeat;
+  background-color: #192144;
+  background-size:292px auto, 113px 132px;
+      }
   @media screen and (min-width: 768px){
     background: url(../img/service_768.png) 100% 55% no-repeat,
   url(../img/service_768-blue.png)50% 13% no-repeat;
@@ -1178,19 +1173,35 @@ input {outline:none;}
   margin-top: -41px;
   padding-bottom:79px;
   border-radius: 0 0 50px 50px;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/service_768@2x.png) 100% 55% no-repeat,
+      url(../img/service_768-blue@2x.png)50% 13% no-repeat;
+      background-color: #192144;
+      background-size:376px auto, 688px 212px;
+    }
   }
-
   @media screen and (min-width: 1440px){
     background: url(../img/service_1440.png) 93% 100% no-repeat,
   url(../img/service_1440-blue.png)5% 14% no-repeat;
   background-color: #192144;
   padding-bottom:150px;
-
+    @media (min-resolution: 2dppx) {
+      background: url(../img/service_1440@2x.png) 93% 100% no-repeat,
+      url(../img/service_1440-blue@2x.png)5% 14% no-repeat;
+      background-color: #192144;
+      background-size:630px 665px, 212px 212px;
+    }
   }
   @media screen and (min-width: 1600px){
     background: url(../img/service_1440.png) 75% 100% no-repeat,
-  url(../img/service_1440-blue.png)21% 14% no-repeat;
-  background-color: #192144;
+    url(../img/service_1440-blue.png)21% 14% no-repeat;
+    background-color: #192144;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/service_1440@2x.png) 93% 100% no-repeat,
+      url(../img/service_1440-blue@2x.png)5% 14% no-repeat;
+      background-color: #192144;
+      background-size:630px 665px, 212px 212px;
+    }
   }
 }
 .about-service__wrapper{
@@ -1401,28 +1412,52 @@ input {outline:none;}
   @media screen and (min-width: 768px){
     margin-top: -80px;
     background:
-    url(../img/back-cube-768.png)6% 43% no-repeat,
-    url(../img/flags-768.png)91% 18% no-repeat;
+    url(../img/back-cube-destinations.png)6% 43% no-repeat,
+    url(../img/flags-destinations.png)91% 18% no-repeat;
     background-color: #EDEFF6;
     border-radius: 0 0 50px 50px;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/back-cube-destinations@2x.png)6% 43% no-repeat,
+      url(../img/flags-destinations@2x.png)91% 18% no-repeat;
+      background-color: #EDEFF6;
+      background-size:141px 141px, 288px 574px;
+    }
   }
   @media screen and (min-width: 1024px) and (max-width: 1439px){
     background:
-    url(../img/back-cube-768.png)4% 37% no-repeat,
-    url(../img/flags-768.png)91% 18% no-repeat;
+    url(../img/back-cube-destinations.png)4% 37% no-repeat,
+    url(../img/flags-destinations.png)91% 18% no-repeat;
     background-color: #EDEFF6;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/back-cube-destinations@2x.png)4% 37% no-repeat,
+      url(../img/flags-destinations@2x.png)91% 18% no-repeat;
+      background-color: #EDEFF6;
+      background-size:141px 141px, 288px 574px;
+    }
   }
   @media screen and (min-width: 1440px){
     background:
-    url(../img/back-cube-768.png)4% 24% no-repeat,
-    url(../img/flags-768.png)95% 66% no-repeat;
+    url(../img/back-cube-destinations.png)4% 24% no-repeat,
+    url(../img/flags-destinations.png)95% 66% no-repeat;
     background-color: #EDEFF6;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/back-cube-destinations@2x.png)4% 24% no-repeat,
+      url(../img/flags-destinations@2x.png)95% 66% no-repeat;
+      background-color: #EDEFF6;
+      background-size:141px 141px, 288px 574px;
+    }
   }
   @media screen and (min-width: 1600px){
     background:
-    url(../img/back-cube-768.png)21% 24% no-repeat,
-    url(../img/flags-768.png)79% 66% no-repeat;
+    url(../img/back-cube-destinations.png)21% 24% no-repeat,
+    url(../img/flags-destinations.png)79% 66% no-repeat;
     background-color: #EDEFF6;
+    @media (min-resolution: 2dppx) {
+      background: url(../img/back-cube-destinations@2x.png)21% 24% no-repeat,
+      url(../img/flags-destinations@2x.png)79% 66% no-repeat;
+      background-color: #EDEFF6;
+      background-size:141px 141px, 288px 574px;
+    }
   }
 }
 .destinations-wrapper{
@@ -1502,6 +1537,8 @@ input {outline:none;}
   margin-left: 25px;
   margin-right: 25px;
     @media screen and (min-width: 768px){
+    flex-direction: row;
+    justify-content: flex-start;
     margin-left: 0;
     margin-right: 0;
   }
@@ -1514,18 +1551,21 @@ input {outline:none;}
   }
 }
 .destinations-list__item{
-  width: 100%;
-  max-width: 550px;
   height: 190px;
-  display: flex;
-  flex-direction: row;
+  display:flex;
+  flex-direction: column;
   align-items:flex-end;
   margin-bottom: 11px;
+  position:relative;
+  margin-right: 20px;
   @media screen and (min-width: 768px){
-    max-width: 618px;
+    margin-right: 0;
+    flex-direction: row-reverse;
+    align-items:center;
     margin-right: 76px;
     margin-left: 76px;
     height: 140px;
+    z-index: 1;
   }
   @media screen and (min-width: 1440px){
     width: 559px;
@@ -1534,34 +1574,12 @@ input {outline:none;}
     height: 140px;
   }
 }
-.destinations-list__item-1{
-  background:url(../img/thailand-mobile.png) no-repeat;
-  background-size: 100% 110px;
+.destinations-list__item img{
   @media screen and (min-width: 768px){
-  background:url(../img/thailand-table.png) top right no-repeat;
-  background-size:559px 140px;
-  }
-}
-.destinations-list__item-2{
-  background:url(../img/france-mobile.png) no-repeat;
-  background-size: 100% 110px;
-  @media screen and (min-width: 768px){
-  background:url(../img/france-table.png) top right no-repeat;
-  background-size:559px 140px;
-  }
-}
-.destinations-list__item-3{
-  background:url(../img/czech-mobile.png) no-repeat;
-  background-size: 100% 110px;
-  @media screen and (min-width: 768px){
-  background:url(../img/czech-table.png) top right no-repeat;
-  background-size:559px 140px;
-  position:relative;
-  z-index: 1;
+    margin-top: 5px;
   }
 }
 .destinations-list__item-3:after{
-
   @media screen and (min-width: 1440px){
     content:"";
     position:absolute;
@@ -1573,7 +1591,7 @@ input {outline:none;}
   }
 }
 .destinations-list__item-info{
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 89px;
   background:white;
@@ -1581,7 +1599,9 @@ input {outline:none;}
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  bottom:0;
   @media screen and (min-width: 768px){
+    position:relative;
     width: 430px;
     height: 100%;
     border-radius: 20px 0 0 20px;
@@ -1591,6 +1611,7 @@ input {outline:none;}
   }
   @media screen and (min-width: 1440px){
   width: 371px;
+  left: 0;
   }
 }
 .destinations-list__item-info-flag{
@@ -1728,27 +1749,53 @@ input {outline:none;}
   border-radius: 0 0 30px 30px;
   position:relative;
   z-index: 97;
+  @media (min-resolution: 2dppx) {
+    background:url(../img/companion-container@2x.png) 8% 6% no-repeat;
+    background-color: #192144;
+    background-size:295px 344px;
+  }
   @media screen and (min-width: 768px){
     margin-top: -60px;
     background:url(../img/back-desktop-table1.png) 5% 41% no-repeat,
-    url(../img/back-desktop-table2.png) 5% 9% no-repeat,
-    url(../img/back-desktop-table3.png) 85% 9.5% no-repeat;
+    url(../img/back-desktop-table2.png) 5% 12% no-repeat,
+    url(../img/back-desktop-table3.png) 85% 12.5% no-repeat;
     background-color: #192144;
     border-radius: 0 0 50px 50px;
+    @media (min-resolution: 2dppx) {
+      background:url(../img/back-desktop-table1@2x.png) 5% 41% no-repeat,
+      url(../img/back-desktop-table2@2x.png) 5% 12% no-repeat,
+      url(../img/back-desktop-table3@2x.png) 85% 12.5% no-repeat;
+      background-color: #192144;
+      background-size:143px 143px,212px 212px,285px 285px;
+    }
   }
   @media screen and (min-width: 1440px){
     margin-top: -60px;
-    background:url(../img/back-desktop-table1.png) 44% 29% no-repeat,
+    background:url(../img/back-desktop-table1.png) 42% 29% no-repeat,
     url(../img/back-desktop-table2.png) 5% 21.5% no-repeat,
     url(../img/back-desktop-table3.png) 16.5% 85% no-repeat;
     background-color: #192144;
     padding-bottom:72px;
+    @media (min-resolution: 2dppx) {
+      background:url(../img/back-desktop-table1@2x.png) 42% 29% no-repeat,
+      url(../img/back-desktop-table2@2x.png) 5% 21.5% no-repeat,
+      url(../img/back-desktop-table3@2x.png) 16.5% 85% no-repeat;
+      background-color: #192144;
+      background-size:143px 143px,212px 212px,285px 285px;
+    }
   }
   @media screen and (min-width: 1600px){
     background:url(../img/back-desktop-table1.png) 49% 29% no-repeat,
     url(../img/back-desktop-table2.png) 23% 21.5% no-repeat,
     url(../img/back-desktop-table3.png) 33% 85% no-repeat;
     background-color: #192144;
+    @media (min-resolution: 2dppx) {
+      background:url(../img/back-desktop-table1@2x.png) 49% 29% no-repeat,
+      url(../img/back-desktop-table2@2x.png) 23% 21.5% no-repeat,
+      url(../img/back-desktop-table3@2x.png) 33% 85% no-repeat;
+      background-color: #192144;
+      background-size:143px 143px,212px 212px,285px 285px;
+    }
   }
 }
 .companion__wrapper{
@@ -1799,7 +1846,7 @@ input {outline:none;}
   line-height: 24px;
   color: #FF8D30;
   @media screen and (min-width: 768px){
-    padding-top:130px;
+    padding-top:165px;
     font-size: 45px;
     line-height: 45px;
   }
@@ -2107,6 +2154,7 @@ input {outline:none;}
   }
   @media screen and (min-width: 1440px){
     margin-bottom: 85px;
+    margin-right: 70px;
   }
 }
 .profile-container__title h3{
@@ -4328,22 +4376,8 @@ input {outline:none;}
 .traveler__card-photo__img{
   border-radius:50%;
   @media screen and (min-width: 768px){
-    display: none;
-  }
-}
-.traveler__card-photo__img--tab{
-  display: none;
-  @media screen and (min-width: 768px){
-    display: block;
-  }
-  @media screen and (min-width: 1440px){
-    display: none;
-  }
-}
-.traveler__card-photo__img--desktop{
-  display: none;
-  @media screen and (min-width: 1440px){
-    display: block;
+    transform: scale(1.03);
+    border-radius:0;
   }
 }
 .traveler__card-like{
@@ -4715,18 +4749,7 @@ input {outline:none;}
     right: 25px;
   }
 }
-.traveler__card-level__img-mobile{
 
-  @media screen and (min-width: 768px){
-    display: none;
-  }
-}
-.traveler__card-level__img-tab{
-    display: none;
-  @media screen and (min-width: 768px){
-    display: block;
-  }
-}
 .traveler__card-level__text{
   font-family: bloggersans;
   font-size: 15px;

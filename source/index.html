@@ -58,8 +58,8 @@
             <img alt="Лого" src="img/second-logo.svg">
           </picture>
         </a>
-        <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
-        <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
+        <button type="button" id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
+        <button type="button" id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
         <a class="user-list-desktop__login--tablet" href="login.html">
               Авторизация
             </a>
@@ -183,7 +183,7 @@
             </p>
             <p class="about-service__appeal">А если найдете кого-то близкого по духу — скорее зовите в совместный трип!
             </p>
-            <button class="button-standart about-service_button">Подробнее</button>
+            <button type="button" class="button-standart about-service_button">Подробнее</button>
           </div>
         </div>
       </section>
@@ -244,7 +244,7 @@
               </div>
             </div>
           </div>
-          <button class="button-standart">Показать все</button>
+          <button type="button" class="button-standart">Показать все</button>
         </div>
       </section >
       <section class="companion">
@@ -329,7 +329,7 @@
                 </div>
             </div>
           </div>
-          <button class="button-standart companion__button">Показать всеx</button>
+          <button type="button" class="button-standart companion__button">Показать всеx</button>
         </div>
       </section>
       <section class="profile-wrapper">
@@ -392,7 +392,7 @@
           </p>
           <form class="interest__form">
             <input class="interest__form-input" type="email" placeholder="E-mail" name="email">
-            <button aria-label="Отправить" class="interest__form-button"><span>Регистрация</span></button>
+            <button type="button" aria-label="Отправить" class="interest__form-button"><span>Регистрация</span></button>
           </form>
           <p class="interest__text">Остались вопросы?<br> Мы с радостью на них ответим!</p>
           <div class="interest__contacts our-contacts">
@@ -426,7 +426,7 @@
               </div>
               <address class="address__text"> ул. Большая <br>Конюшенная, 19/8</address>
           </div>
-          <button class="address__button">Проложить маршрут</button>
+          <button type="button" class="address__button">Проложить маршрут</button>
         </div>
       </section>
       <section class="map">
@@ -437,15 +437,27 @@
     </main>
     <footer class="main-footer">
       <div class="main-footer__wrapper">
-        <div class="main-footer__img"></div>
-        <div class="main-footer__list social-list">
-          <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
-          <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
-          <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+        <div class="main-footer__img">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/footer-logo-1440.svg">
+            <source media="(min-width: 768px)" srcset="img/footer-logo-768.svg">
+            <img alt="Лого" src="img/footer-logo.svg">
+          </picture>
         </div>
+        <ul class="main-footer__list social-list">
+          <li>
+            <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
+          </li>
+          <li>
+            <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
+          </li>
+          <li>
+            <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+          </li>
+        </ul>
         <div class="main-footer__developer-container developer">
           <p class="developer__text">Разработано</p>
-          <img alt="Разработчик" class="developer__img" src="img/html-academy.svg">
+          <img alt="Разработано" class="developer__img" src="img/html-academy.svg">
         </div>
       </div>
     </footer>
@@ -470,7 +482,7 @@
             <p class="business-tarif__element__price">Индивидуально</p>
           </li>
         </ul>
-        <button onclick="closeBusines()" class="business-tarif__button">Закрыть окно</button>
+        <button type="button" onclick="closeBusines()" class="business-tarif__button">Закрыть окно</button>
       </div>
       <script>
             function closeBusines(){

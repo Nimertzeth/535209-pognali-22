@@ -58,8 +58,8 @@
             <img alt="Лого" src="img/second-logo.svg">
           </picture>
         </a>
-        <button id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
-        <button id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
+        <button type="button" id="button-open-menu" onclick="showMenu()"  class="main-nav__toggle" aria-label="Открыть меню"></button>
+        <button type="button" id="button-close-menu" onclick="closeMenu()"  class="main-nav__toggle--close close" aria-label="Открыть меню"></button>
         <a class="user-list-desktop__login--tablet" href="login.html">
               Авторизация
             </a>
@@ -159,7 +159,7 @@
                 landRegionsButtonClose.style.display = "block";
               }
           </script>
-            <button class="top-part__button"></button>
+            <button type="button" class="top-part__button"></button>
           </div>
           <div class="filter-country-onner__medium-part medium-part " id="medium-part">
             <div class="medium-part__land-regions land-regions">
@@ -174,9 +174,9 @@
             </div>
             <div class="land-regions-tab">
               <h3 id="land-regions-tab__title--open" class="land-regions-tab__title--open" onclick="showFilter()">Показать все</h3>
-              <button id="land-regions-tab__button--open" class="land-regions-tab__button--open" onclick="showFilter()"></button>
+              <button type="button" id="land-regions-tab__button--open" class="land-regions-tab__button--open" onclick="showFilter()"></button>
               <h3 id="land-regions-tab__title--close" class="land-regions-tab__title--close" onclick="closeFilter()">Свернуть</h3>
-              <button id="land-regions-tab__button--close" class="land-regions-tab__button--close" onclick="closeFilter()"></button>
+              <button type="button" id="land-regions-tab__button--close" class="land-regions-tab__button--close" onclick="closeFilter()"></button>
             </div>
           </div>
         </div>
@@ -184,31 +184,31 @@
         <div class="filter-country-inner__wrapper">
           <div class="filter-country-inner__bottom-part bottom-part">
             <div class="bottom-part__country-shortlist country-shortlist">
-              <button class="country-shortlist__element country-shortlist__element--active">А</button>
-              <button class="country-shortlist__element">Б</button>
-              <button class="country-shortlist__element">В</button>
-              <button class="country-shortlist__element">Г</button>
-              <button class="country-shortlist__element">Д</button>
-              <button class="country-shortlist__element">Е</button>
-              <button class="country-shortlist__element">З</button>
-              <button class="country-shortlist__element">И</button>
-              <button class="country-shortlist__element">К</button>
-              <button class="country-shortlist__element">Л</button>
-              <button class="country-shortlist__element">М</button>
-              <button class="country-shortlist__element">Н</button>
-              <button class="country-shortlist__element">О</button>
-              <button class="country-shortlist__element">П</button>
-              <button class="country-shortlist__element">Р</button>
-              <button class="country-shortlist__element">С</button>
-              <button class="country-shortlist__element">Т</button>
-              <button class="country-shortlist__element">У</button>
-              <button class="country-shortlist__element">Ф</button>
-              <button class="country-shortlist__element">Х</button>
-              <button class="country-shortlist__element">Ч</button>
-              <button class="country-shortlist__element">Ш</button>
-              <button class="country-shortlist__element">Э</button>
-              <button class="country-shortlist__element">Ю</button>
-              <button class="country-shortlist__element">Я</button>
+              <button type="button" class="country-shortlist__element country-shortlist__element--active">А</button>
+              <button type="button" class="country-shortlist__element">Б</button>
+              <button type="button" class="country-shortlist__element">В</button>
+              <button type="button" class="country-shortlist__element">Г</button>
+              <button type="button" class="country-shortlist__element">Д</button>
+              <button type="button" class="country-shortlist__element">Е</button>
+              <button type="button" class="country-shortlist__element">З</button>
+              <button type="button" class="country-shortlist__element">И</button>
+              <button type="button" class="country-shortlist__element">К</button>
+              <button type="button" class="country-shortlist__element">Л</button>
+              <button type="button" class="country-shortlist__element">М</button>
+              <button type="button" class="country-shortlist__element">Н</button>
+              <button type="button" class="country-shortlist__element">О</button>
+              <button type="button" class="country-shortlist__element">П</button>
+              <button type="button" class="country-shortlist__element">Р</button>
+              <button type="button" class="country-shortlist__element">С</button>
+              <button type="button" class="country-shortlist__element">Т</button>
+              <button type="button" class="country-shortlist__element">У</button>
+              <button type="button" class="country-shortlist__element">Ф</button>
+              <button type="button" class="country-shortlist__element">Х</button>
+              <button type="button" class="country-shortlist__element">Ч</button>
+              <button type="button" class="country-shortlist__element">Ш</button>
+              <button type="button" class="country-shortlist__element">Э</button>
+              <button type="button" class="country-shortlist__element">Ю</button>
+              <button type="button" class="country-shortlist__element">Я</button>
             </div>
             <div class="bottom-part__country-fulllist country-fulllist">
               <div class="country-fulllist__element-active">
@@ -500,7 +500,7 @@
                 </ul>
               </div>
             </div>
-            <button onclick="closeFilter()" class="bottom-part__button-close">Свернуть</button>
+            <button type="button" onclick="closeFilter()" class="bottom-part__button-close">Свернуть</button>
             <script>
             function closeFilter(){
                 document.getElementById("medium-part").classList.remove('medium-part--open');
@@ -632,7 +632,7 @@
                   <div class="range__toggle range__toggle-max"></div>
                 </div>
               </fieldset>
-              <button class="selection__form__button">Показать</button>
+              <button type="button" class="selection__form__button">Показать</button>
             </form>
           </div>
           <div class="selection__traveler">
@@ -644,12 +644,12 @@
                 <div class="traveler__card-photo">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/firsova-desktop.jpg, img/firsova-desktop@2x.jpg 2x">
-                    <source media="(min-width: 600px)" srcset="img/firsova-tab.jpg, img/firsova-tab@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/firsova-tab.jpg, img/firsova-tab@2x.jpg 2x">
                     <img alt="Фирсова" class="traveler__card-photo__img" src="img/firsova-mobile.jpg" srcset="img/firsova-mobile@2x.jpg 2x">
                   </picture>
                 </div>
                 <div class="traveler__card-like">
-                    <button class="traveler__card-photo__like__button traveler__card-photo__like__button--active">
+                    <button type="button" class="traveler__card-photo__like__button traveler__card-photo__like__button--active">
                     </button>
                   <p class="traveler__card-photo__text">1,5 М</p>
                 </div>
@@ -704,7 +704,7 @@
                     <img alt="Уровень 99" src="img/mark_level_99.svg">
                   </picture>
                 </div>
-                <button class="traveler__card-button">Позвать!</button>
+                <button type="button" class="traveler__card-button">Позвать!</button>
               </div>
               <div class="traveler__card">
                 <div class="traveler__card-name">
@@ -713,12 +713,12 @@
                 <div class="traveler__card-photo">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/demin-desktop.jpg, img/demin-desktop@2x.jpg 2x">
-                    <source media="(min-width: 600px)" srcset="img/demin-tab.jpg, img/demin-tab@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/demin-tab.jpg, img/demin-tab@2x.jpg 2x">
                     <img alt="Демин" class="traveler__card-photo__img" src="img/demin-mobile.jpg" srcset="img/demin-mobile@2x.jpg 2x">
                   </picture>
                 </div>
                 <div class="traveler__card-like">
-                    <button class="traveler__card-photo__like__button">
+                    <button type="button" class="traveler__card-photo__like__button">
                     </button>
                   <p class="traveler__card-photo__text">1500</p>
                 </div>
@@ -768,7 +768,7 @@
                     <img alt="Уровень 80" src="img/mark_level_80.svg">
                   </picture>
                 </div>
-                <button class="traveler__card-button">Позвать!</button>
+                <button type="button" class="traveler__card-button">Позвать!</button>
               </div>
               <div class="traveler__card">
                 <div class="traveler__card-name">
@@ -777,12 +777,12 @@
                 <div class="traveler__card-photo">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/smolov-desktop.jpg, img/smolov-desktop@2x.jpg 2x">
-                    <source media="(min-width: 600px)" srcset="img/smolov-tab.jpg, img/smolov-tab@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/smolov-tab.jpg, img/smolov-tab@2x.jpg 2x">
                     <img alt="Смолов" class="traveler__card-photo__img" src="img/smolov-mobile.jpg" srcset="img/smolov-mobile@2x.jpg 2x">
                   </picture>
                 </div>
                 <div class="traveler__card-like">
-                    <button class="traveler__card-photo__like__button">
+                    <button type="button" class="traveler__card-photo__like__button">
                     </button>
                   <p class="traveler__card-photo__text">170</p>
                 </div>
@@ -837,7 +837,7 @@
                     <img alt="Уровень 25" src="img/mark_level_25.svg">
                   </picture>
                 </div>
-                <button class="traveler__card-button">Позвать!</button>
+                <button type="button" class="traveler__card-button">Позвать!</button>
               </div>
               <div class="traveler__card">
                 <div class="traveler__card-name">
@@ -846,12 +846,12 @@
                 <div class="traveler__card-photo">
                   <picture>
                     <source media="(min-width: 1440px)" srcset="img/rogovaya-desktop.jpg, img/rogovaya-desktop@2x.jpg 2x">
-                    <source media="(min-width: 600px)" srcset="img/rogovaya-tab.jpg, img/rogovaya-tab@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/rogovaya-tab.jpg, img/rogovaya-tab@2x.jpg 2x">
                     <img alt="Роговая" class="traveler__card-photo__img" src="img/rogovaya-mobile.jpg" srcset="img/rogovaya-mobile@2x.jpg 2x">
                   </picture>
                 </div>
                 <div class="traveler__card-like">
-                    <button class="traveler__card-photo__like__button">
+                    <button type="button" class="traveler__card-photo__like__button">
                     </button>
                   <p class="traveler__card-photo__text">23</p>
                 </div>
@@ -903,11 +903,11 @@
                     <img alt="Уровень 50" src="img/mark_level_50.svg">
                   </picture>
                 </div>
-                <button class="traveler__card-button">Позвать!</button>
+                <button type="button" class="traveler__card-button">Позвать!</button>
               </div>
               <div class="selection__traveler__show-more">
                 <img alt="Закрыть" class="selection__traveler__show-more__img" src="img/icon_close.svg">
-                <button class="selection__traveler__show-more__button">Показать еще</button>
+                <button type="button" class="selection__traveler__show-more__button">Показать еще</button>
               </div>
             </div>
           </div>
@@ -922,25 +922,37 @@
             <div class="paginator__page__element"><a href="">4</a></div>
           </div>
           <div class="paginator__arrows">
-            <button class="paginator__arrows__arrow-left"><img alt="Стрелка влево" src="img/button-open-filter.svg"> </button>
-            <button class="paginator__arrows__arrow-right"><img alt="Стрелка вправо" src="img/button-open-filter.svg"> </button>
+            <button type="button" class="paginator__arrows__arrow-left"><img alt="Стрелка влево" src="img/button-open-filter.svg"> </button>
+            <button type="button" class="paginator__arrows__arrow-right"><img alt="Стрелка вправо" src="img/button-open-filter.svg"> </button>
           </div>
         </div>
       </section>
     </main>
     <footer class="main-footer">
       <div class="main-footer__wrapper">
-        <div class="main-footer__img"></div>
-        <div class="main-footer__list social-list">
-          <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
-          <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
-          <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+        <div class="main-footer__img">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/footer-logo-1440.svg">
+            <source media="(min-width: 768px)" srcset="img/footer-logo-768.svg">
+            <img alt="Лого" src="img/footer-logo.svg">
+          </picture>
         </div>
+        <ul class="main-footer__list social-list">
+          <li>
+            <a class="social-list__fb"><img alt="Фейсбук" src="img/fb_footer.svg"></a>
+          </li>
+          <li>
+            <a class="social-list__vk"><img alt="Контакт" src="img/vk_footer.svg"></a>
+          </li>
+          <li>
+            <a class="social-list__ig"><img alt="Инстаграм" src="img/inst_footer.svg"></a>
+          </li>
+        </ul>
         <div class="main-footer__developer-container developer">
           <p class="developer__text">Разработано</p>
           <img alt="Разработано" class="developer__img" src="img/html-academy.svg">
         </div>
-    </div>
+      </div>
     </footer>
   </body>
 </html>
